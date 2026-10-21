@@ -12,9 +12,8 @@ const { clinic, testimonialsSection: section, testimonials } = dentare;
       <p class="text-eyebrow uppercase text-champagne">{section.eyebrow}</p>
       <h2 id="testimonials-title" class="mt-5 text-display-lg text-ivory">{section.title}</h2>
       <div class="mt-6 inline-flex max-w-full flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl border border-champagne/20 bg-champagne/5 px-4 py-3 text-xs leading-relaxed text-slate-200 sm:text-sm">
-        <span class="inline-flex items-center gap-2 font-semibold text-champagne-light"><Icon name="star" class="h-4 w-4" />{section.ratingPrefix} {clinic.google.rating} {clinic.google.ratingLabel}</span>
-        <span aria-hidden="true" class="text-champagne/50">•</span>
-        <span>{clinic.google.verifiedCountLabel}</span>
+        <Icon name="star" class="h-4 w-4 text-champagne-light" />
+        <span class="min-w-0 font-semibold text-champagne-light">{clinic.google.summary}</span>
       </div>
       <p class="mt-5 text-sm leading-loose text-slate-200">{section.description}</p>
     </div>

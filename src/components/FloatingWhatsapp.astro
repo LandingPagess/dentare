@@ -13,7 +13,7 @@ const availability = JSON.stringify({
 ---
 
 <div data-floating-whatsapp class="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-6 z-50 flex items-center gap-3 lg:bottom-6">
-  <div class="pointer-events-none max-w-[calc(100vw-7.5rem)] rounded-2xl border border-white/10 bg-slate-900/95 px-3 py-2.5 text-xs leading-relaxed text-ivory shadow-premium backdrop-blur-md sm:max-w-[14rem] sm:px-4">
+  <div class="pointer-events-none hidden lg:block max-w-[calc(100vw-7.5rem)] rounded-2xl border border-white/10 bg-slate-900/95 px-3 py-2.5 text-xs leading-relaxed text-ivory shadow-premium backdrop-blur-md sm:max-w-[14rem] sm:px-4">
     <span data-whatsapp-status class="block text-surgical" aria-live="polite">{content.defaultStatus}</span>
     <span class="block font-semibold">{content.label}</span>
   </div>
@@ -53,4 +53,52 @@ const availability = JSON.stringify({
     window.setInterval(updateStatus, 60_000);
     document.addEventListener('visibilitychange', () => { if (!document.hidden) updateStatus(); });
   }
+
+  const floatingButton = document.querySelector<HTMLElement>('[data-floating-whatsapp]');
+  if (floatingButton) {
+    const mobile = window.matchMedia('(max-width: 1023px)');
+    const actions = Array.from(document.querySelectorAll<HTMLElement>('a[href], button, summary, input:not([type="hidden"]), select, textarea, iframe, [role="button"]'))
+      .filter((action) => !floatingButton.contains(action));
+    let updatePending = false;
+
+    const updateOverlap = () => {
+      updatePending = false;
+      if (!mobile.matches) {
+        floatingButton.removeAttribute('data-obstructed');
+        return;
+      }
+      const bounds = floatingButton.getBoundingClientRect();
+      const overlapsAction = actions.some((action) => {
+        if (!action.getClientRects().length || getComputedStyle(action).visibility === 'hidden') return false;
+        const rect = action.getBoundingClientRect();
+        return rect.right > bounds.left - 8 && rect.left < bounds.right + 8
+          && rect.bottom > bounds.top - 8 && rect.top < bounds.bottom + 8;
+      });
+      floatingButton.toggleAttribute('data-obstructed', overlapsAction);
+    };
+
+    const scheduleUpdate = () => {
+      if (updatePending) return;
+      updatePending = true;
+      window.requestAnimationFrame(updateOverlap);
+    };
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate, { passive: true });
+    window.visualViewport?.addEventListener('resize', scheduleUpdate, { passive: true });
+    mobile.addEventListener('change', scheduleUpdate);
+    document.addEventListener('toggle', scheduleUpdate, true);
+    document.fonts.ready.then(scheduleUpdate);
+    new ResizeObserver(scheduleUpdate).observe(document.body);
+    updateOverlap();
+  }
 </script>
+
+<style>
+  @media (max-width: 1023px) {
+    [data-floating-whatsapp][data-obstructed] {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+</style>

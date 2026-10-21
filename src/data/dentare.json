@@ -21,18 +21,17 @@
       "Salvador"
     ],
     "contact": {
-      "whatsapp": "5571996543550",
-      "displayPhone": "(71) 99654-3550",
-      "phoneHref": "tel:+5571996543550",
-      "whatsappBaseUrl": "https://wa.me/5571996543550",
+      "whatsapp": "5571992120622",
+      "displayPhone": "(71) 99212-0622",
+      "phoneHref": "tel:+5571992120622",
+      "whatsappBaseUrl": "https://wa.me/5571992120622",
       "defaultMessage": "Olá, equipe DENTARE! Gostaria de agendar uma avaliação em Vilas do Atlântico e conhecer as opções de tratamento para o meu sorriso."
     },
     "google": {
-      "rating": "5.0",
-      "reviewCountLabel": "Mais de 210 avaliações 5 estrelas no Google Maps",
-      "source": "Informações fornecidas pela clínica",
-      "ratingLabel": "no Google Maps",
-      "verifiedCountLabel": "Mais de 210 avaliações 5 estrelas no Google Maps"
+      "rating": "5,0",
+      "reviewCount": 210,
+      "summary": "Nota 5,0 · 210 avaliações no Google",
+      "source": "Informações e transcrições do Google Maps fornecidas pela clínica"
     },
     "subtitle": "Odontologia Especializada",
     "hours": {
@@ -63,26 +62,16 @@
       ]
     },
     "timeZone": "America/Bahia",
-    "technicalResponsibles": [
-      {
-        "name": "Dr. Paulo Victor Ribeiro",
-        "registration": "10589",
-        "registry": "CRO/BA",
-        "specialty": "Reabilitação Oral e Implantodontia"
-      },
-      {
-        "name": "Dra. Thalita Prado",
-        "registration": "10590",
-        "registry": "CRO/BA",
-        "specialty": "Ortodontia e Invisalign Top Doctor"
-      }
-    ],
     "social": {
       "instagram": {
         "url": "https://www.instagram.com/dentare.odonto.clinica/",
         "handle": "@dentare.odonto.clinica",
         "ariaLabel": "Visitar o Instagram da DENTARE (@dentare.odonto.clinica)"
       }
+    },
+    "team": {
+      "label": "Corpo Clínico",
+      "description": "Dr. Paulo Victor Ribeiro e equipe multidisciplinar"
     }
   },
   "seo": {
@@ -93,7 +82,7 @@
     "siteUrl": "https://dentare-theta.vercel.app",
     "social": {
       "title": "DENTARE | Implantes e Alinhadores em Vilas do Atlântico",
-      "description": "Planejamento digital, conforto e acolhimento para transformar seu sorriso. Mais de 210 avaliações 5 estrelas no Google Maps. Agende sua avaliação na DENTARE.",
+      "description": "Planejamento digital, conforto e acolhimento para cuidar do seu sorriso. Nota 5,0 · 210 avaliações no Google. Agende sua avaliação na DENTARE.",
       "image": "/og-image.jpg",
       "imageAlt": "DENTARE Odontologia Especializada — Implantes guiados e alinhadores invisíveis em Vilas do Atlântico.",
       "imageWidth": 1200,
@@ -133,10 +122,6 @@
     },
     "reassurance": "Seu tempo respeitado. Suas dúvidas acolhidas. Seu tratamento explicado.",
     "headlineAccent": "Cuidado para você se sentir em casa.",
-    "authority": {
-      "ratingLabel": "no Google Maps",
-      "socialProof": "Mais de 210 avaliações 5 estrelas no Google Maps"
-    },
     "visual": {
       "eyebrow": "O cuidado começa no encontro",
       "title": "Confiança para sorrir. Tranquilidade para viver.",
@@ -306,37 +291,36 @@
     "title": "A Confiança de Quem Já Sorriu Conosco",
     "description": "Experiências compartilhadas por pacientes da DENTARE.",
     "source": "Depoimentos públicos transcritos e fornecidos pela clínica",
-    "ratingPrefix": "Nota",
     "verificationBadge": "Avaliação verificada no Google Maps",
     "ratingAccessibleLabel": "estrelas de 5"
   },
   "testimonials": [
     {
-      "id": "anna-flavia-marques",
-      "name": "Anna Flávia Marques",
-      "rating": 5,
-      "highlight": "Equipe educada e acolhedora",
-      "quote": "Recomendo com todo prazer. Equipe educada e acolhedora, o Dr. Paulo explicou cada etapa com muito cuidado.",
-      "featured": true,
-      "initials": "AF"
-    },
-    {
-      "id": "maria-rita-silva",
-      "name": "Maria Rita Silva",
-      "rating": 5,
-      "highlight": "Melhor experiência possível!",
-      "quote": "Melhor experiência possível! Dr. Paulo Victor muito atencioso e competente, e a recepção é acolhedora demais. A clínica Dentare com certeza foi minha melhor escolha em Vilas do Atlântico.",
-      "featured": true,
-      "initials": "MR"
-    },
-    {
       "id": "rayane-rode",
       "name": "Rayane Rôde",
       "rating": 5,
-      "highlight": "Fui muito bem acolhida por toda a equipe da clínica.",
-      "quote": "Fui muito bem acolhida por toda a equipe da clínica. Fiz a extração do siso com o Dr. Paulo e todo o procedimento e pós-operatório foram extremamente tranquilos e com muita atenção.",
+      "highlight": "Fui muito bem atendida na Clínica Dentare.",
+      "quote": "Fui muito bem atendida na Clínica Dentare. Desde a recepção até o procedimento de extração, tudo foi feito com cuidado e atenção. O Doutor Paulo me deixou muito tranquila, explicou cada etapa e o pós-operatório foi bem orientado.",
       "featured": true,
       "initials": "RR"
+    },
+    {
+      "id": "catia",
+      "name": "Cátia",
+      "rating": 5,
+      "highlight": "Atendimento de Excelência!",
+      "quote": "Atendimento de Excelência! Dr. Paulo Victor muito atencioso e competente! A recepcionista Naama muito atenciosa, um amor de pessoa! A clínica Dentare com certeza foi minha melhor escolha!",
+      "featured": true,
+      "initials": "C"
+    },
+    {
+      "id": "camilla-araujo",
+      "name": "Camilla Araújo",
+      "rating": 5,
+      "highlight": "Minha experiência foi ótima, atendimento com qualidade e segurança",
+      "quote": "Minha experiência foi ótima, atendimento com qualidade e segurança, desde a recepção que nos recebe com muita atenção e educação até as consultas e procedimento em si, onde nos sentimos seguros e bem acolhidos.",
+      "featured": true,
+      "initials": "CA"
     }
   ],
   "faqSection": {
@@ -421,7 +405,6 @@
     "description": "Odontologia que une precisão, naturalidade e acolhimento em Vilas do Atlântico.",
     "navigationLabel": "Explore a DENTARE",
     "contactLabel": "Fale com a clínica",
-    "technicalLabel": "Responsáveis técnicos",
     "rightsReserved": "Todos os direitos reservados.",
     "privacyLabel": "Privacidade e informações legais",
     "privacyNotice": "O mapa integrado e o WhatsApp são serviços de terceiros, com políticas de privacidade próprias. Para informações sobre o uso dos seus dados no atendimento, entre em contato com a equipe da DENTARE.",
