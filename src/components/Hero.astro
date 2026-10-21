@@ -48,7 +48,7 @@ const headlineLead = hasAccent ? hero.headline.slice(0, -hero.headlineAccent.len
         <img
           src={image.src}
           srcset={imageSources}
-          sizes="(min-width: 1440px) 560px, (min-width: 1024px) 45vw, (min-width: 640px) 576px, calc(100vw - 3rem)"
+          sizes={image.sizes}
           width={image.width}
           height={image.height}
           alt={image.alt}

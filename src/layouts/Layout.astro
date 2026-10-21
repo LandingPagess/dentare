@@ -36,6 +36,8 @@ const imageUrl = new URL(socialImage ?? dentare.seo.social.image, canonicalUrl ?
 const sharingTitle = title === dentare.seo.title ? dentare.seo.social.title : title;
 const sharingDescription = description === dentare.seo.description ? dentare.seo.social.description : description;
 const sharingImageAlt = socialImage ? socialImageAlt : dentare.seo.social.imageAlt;
+const heroImage = dentare.hero.visual.image;
+const heroImageSources = heroImage.sources.map((source) => `${source.src} ${source.width}w`).join(', ');
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -69,6 +71,14 @@ const serializedStructuredData = JSON.stringify(structuredData).replace(/</g, '\
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preload"
+      as="image"
+      href={heroImage.src}
+      imagesrcset={heroImageSources}
+      imagesizes={heroImage.sizes}
+      fetchpriority="high"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />

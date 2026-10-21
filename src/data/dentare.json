@@ -152,7 +152,8 @@
         "position": "50% 42%",
         "credit": "Harold Hisona / Unsplash",
         "sourceUrl": "https://unsplash.com/photos/dentist-talking-to-patient-in-a-modern-dental-office-Bg81yWKZlMg",
-        "licenseUrl": "https://unsplash.com/license"
+        "licenseUrl": "https://unsplash.com/license",
+        "sizes": "(min-width: 1440px) 560px, (min-width: 1024px) 45vw, (min-width: 640px) 576px, calc(100vw - 3rem)"
       }
     },
     "treatmentFocus": "Implantes Dentários Guiados e Alinhadores Invisíveis"
