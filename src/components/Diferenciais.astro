@@ -1,0 +1,40 @@
+---
+import dentare from '../data/dentare.json';
+import Icon from './Icon.astro';
+
+const { differentialsSection: section, differentials } = dentare;
+const icons: Record<string, 'scan' | 'shield' | 'heart' | 'clock'> = {
+  'tecnologia-3d': 'scan',
+  conforto: 'shield',
+  'atendimento-humanizado': 'heart',
+  pontualidade: 'clock',
+};
+---
+
+<section id="diferenciais" aria-labelledby="differentials-title" class="relative isolate border-b border-white/5 py-20 sm:py-24 lg:py-28">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-surface/40 to-background"></div>
+  <div class="container">
+    <div class="max-w-3xl">
+      <p class="flex items-center gap-3 text-eyebrow uppercase text-champagne">
+        <span aria-hidden="true" class="h-px w-8 shrink-0 bg-champagne/50"></span>
+        {section.eyebrow}
+      </p>
+      <h2 id="differentials-title" class="mt-5 text-display-lg text-ivory">{section.title}</h2>
+      <p class="mt-5 max-w-2xl text-sm leading-loose text-ivory-muted sm:text-base">{section.description}</p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-5">
+      {differentials.map((item) => (
+        <article aria-labelledby={`differential-${item.id}`} class="group relative flex min-w-0 flex-col overflow-hidden rounded-3xl border border-white/5 bg-slate-900/60 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:shadow-glow motion-reduce:transform-none motion-reduce:transition-none lg:p-7">
+          <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-br from-champagne/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 motion-reduce:transition-none"></div>
+          <div class="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-champagne/15 bg-champagne/5 text-champagne-light transition-colors duration-300 group-hover:border-champagne/30 group-hover:bg-champagne/10 motion-reduce:transition-none">
+            <Icon name={icons[item.id] ?? 'scan'} class="h-6 w-6" />
+          </div>
+          <h3 id={`differential-${item.id}`} class="relative mt-6 text-xl leading-snug text-ivory lg:min-h-14">{item.title}</h3>
+          <p class="relative mb-7 mt-3 text-sm leading-relaxed text-ivory-muted">{item.description}</p>
+          <p class="relative mt-auto border-t border-white/5 pt-5 text-[11px] leading-relaxed text-champagne-light">{item.highlight}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

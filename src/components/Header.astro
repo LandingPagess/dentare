@@ -1,0 +1,112 @@
+---
+import dentare from '../data/dentare.json';
+import Icon from './Icon.astro';
+
+const { clinic, navigation, header } = dentare;
+const whatsappUrl = new URL(clinic.contact.whatsappBaseUrl);
+whatsappUrl.searchParams.set('text', clinic.contact.defaultMessage);
+---
+
+<a href="#conteudo" class="fixed left-4 top-4 z-[70] -translate-y-32 rounded-lg bg-champagne px-5 py-3 font-semibold text-navy-950 focus:translate-y-0">
+  {header.skipLinkLabel}
+</a>
+<header data-site-header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+  <div class="hidden border-b border-white/5 xl:block">
+    <div class="container flex min-h-9 items-center justify-between gap-6 text-[11px] tracking-wide text-ivory-muted">
+      <span class="flex items-center gap-2"><Icon name="pin" class="h-3.5 w-3.5 text-champagne" />{clinic.address.short}</span>
+      <span class="flex items-center gap-2"><Icon name="clock" class="h-3.5 w-3.5 text-champagne" />{clinic.hours.summary}</span>
+    </div>
+  </div>
+  <div class="container flex h-20 items-center justify-between gap-5 lg:h-[5.5rem]">
+    <a href="#inicio" aria-label={header.homeLabel} class="group flex shrink-0 items-center gap-3">
+      <svg viewBox="0 0 36 44" class="h-10 w-8 text-champagne" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" focusable="false">
+        <path d="M5 6h11c12 0 17 7 17 16S28 38 16 38H5V6Z" />
+        <path d="M11 12h5c8 0 11 4 11 10s-3 10-11 10h-5V12ZM1 22h17" opacity=".6" />
+      </svg>
+      <span class="flex flex-col">
+        <span class="font-display text-[1.6rem] leading-none tracking-[0.15em] text-ivory transition-colors group-hover:text-champagne-light">{clinic.shortName}</span>
+        <span class="mt-2 text-[8px] font-medium uppercase tracking-[0.16em] text-ivory-muted sm:text-[9px]">{clinic.subtitle}</span>
+      </span>
+    </a>
+    <nav aria-label={header.navigationLabel} class="hidden lg:block">
+      <ul class="flex items-center gap-5 xl:gap-7">
+        {navigation.map((link) => (
+          <li><a href={link.href} class="inline-flex min-h-11 items-center text-[13px] font-medium text-ivory-muted transition-colors hover:text-champagne-light">{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <a href={whatsappUrl.href} class="hidden min-h-11 items-center justify-center gap-3 rounded-full bg-champagne px-5 py-3 text-xs font-semibold text-navy-950 transition-colors hover:bg-champagne-light lg:inline-flex">
+      {header.ctaLabel}<Icon name="arrow" class="h-4 w-4" />
+    </a>
+    <button type="button" data-menu-open aria-label={header.openMenuLabel} aria-controls="mobile-navigation" aria-expanded="false" class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 text-champagne transition-colors hover:bg-white/5 lg:hidden">
+      <Icon name="menu" class="h-6 w-6" />
+    </button>
+  </div>
+
+  <dialog id="mobile-navigation" aria-labelledby="mobile-menu-title" class="fixed inset-x-0 top-4 m-auto w-[calc(100%-2rem)] max-w-lg overflow-y-auto overscroll-contain rounded-2xl border border-white/15 bg-navy-900 p-6 text-ivory shadow-premium backdrop:bg-slate-950/80 backdrop:backdrop-blur-sm max-h-[calc(100dvh-2rem)]">
+    <div class="mb-7 flex items-center justify-between gap-4">
+      <p id="mobile-menu-title" class="text-xs uppercase tracking-eyebrow text-champagne">{header.menuTitle}</p>
+      <button type="button" data-menu-close aria-label={header.closeMenuLabel} class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 hover:bg-white/5">
+        <Icon name="close" />
+      </button>
+    </div>
+    <nav aria-label={header.mobileNavigationLabel}>
+      <ul class="divide-y divide-white/10">
+        {navigation.map((link) => (
+          <li><a href={link.href} class="flex min-h-16 items-center justify-between gap-4 py-4 font-display text-2xl transition-colors hover:text-champagne">{link.label}<Icon name="arrow" class="h-4 w-4 text-champagne" /></a></li>
+        ))}
+      </ul>
+    </nav>
+    <a href={whatsappUrl.href} class="mt-7 flex min-h-12 items-center justify-center gap-3 rounded-full bg-champagne px-5 py-3 text-sm font-semibold text-navy-950 hover:bg-champagne-light">
+      <Icon name="message" />{header.ctaLabel}
+    </a>
+    <div class="mt-7 space-y-3 border-t border-white/10 pt-6 text-xs leading-relaxed text-ivory-muted">
+      <p class="flex items-start gap-2"><Icon name="pin" class="mt-0.5 h-4 w-4 text-champagne" />{clinic.address.short}</p>
+      <p class="flex items-start gap-2"><Icon name="clock" class="mt-0.5 h-4 w-4 text-champagne" />{clinic.hours.summary}</p>
+    </div>
+  </dialog>
+</header>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-site-header]').forEach((header) => {
+    const openButton = header.querySelector<HTMLButtonElement>('[data-menu-open]');
+    const closeButton = header.querySelector<HTMLButtonElement>('[data-menu-close]');
+    const dialog = header.querySelector<HTMLDialogElement>('dialog');
+    if (!openButton || !closeButton || !dialog) return;
+
+    let previousOverflow = '';
+    const restoreMenuState = () => {
+      if (dialog.open) return;
+      document.documentElement.style.overflow = previousOverflow;
+      openButton.setAttribute('aria-expanded', 'false');
+    };
+    const closeMenu = () => {
+      dialog.close();
+      restoreMenuState();
+    };
+    openButton.addEventListener('click', () => {
+      if (dialog.open) return;
+      previousOverflow = document.documentElement.style.overflow;
+      dialog.showModal();
+      document.documentElement.style.overflow = 'hidden';
+      openButton.setAttribute('aria-expanded', 'true');
+    });
+    closeButton.addEventListener('click', closeMenu);
+    dialog.addEventListener('close', restoreMenuState);
+    dialog.addEventListener('cancel', (event) => {
+      event.preventDefault();
+      closeMenu();
+    });
+    dialog.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+    dialog.addEventListener('click', (event) => {
+      if (event.target !== dialog) return;
+      const bounds = dialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) closeMenu();
+    });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', (event) => {
+      if (event.matches && dialog.open) closeMenu();
+    });
+  });
+</script>

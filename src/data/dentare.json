@@ -1,0 +1,362 @@
+{
+  "clinic": {
+    "name": "DENTARE Odontologia Especializada",
+    "shortName": "DENTARE",
+    "tagline": "Precisão no planejamento. Acolhimento em cada detalhe.",
+    "address": {
+      "full": "Av. Praia de Itapuã, Quadra 19, Lote 07 — Edifício Ônix, Sala 102, Vilas do Atlântico, Lauro de Freitas - BA",
+      "street": "Av. Praia de Itapuã",
+      "neighborhood": "Vilas do Atlântico",
+      "city": "Lauro de Freitas",
+      "state": "BA",
+      "country": "BR",
+      "short": "Vilas do Atlântico · Lauro de Freitas",
+      "complement": "Edifício Ônix, Sala 102",
+      "block": "Quadra 19",
+      "lot": "Lote 07"
+    },
+    "serviceAreas": [
+      "Vilas do Atlântico",
+      "Lauro de Freitas",
+      "Salvador"
+    ],
+    "contact": {
+      "whatsapp": "5571992120622",
+      "displayPhone": "(71) 99212-0622",
+      "phoneHref": "tel:+5571992120622",
+      "whatsappBaseUrl": "https://wa.me/5571992120622",
+      "defaultMessage": "Olá, equipe DENTARE! Gostaria de agendar uma avaliação em Vilas do Atlântico e conhecer as opções de tratamento para o meu sorriso."
+    },
+    "google": {
+      "rating": "5.0",
+      "reviewCountLabel": "+350 avaliações",
+      "source": "Informações fornecidas pela clínica",
+      "ratingLabel": "no Google Maps",
+      "verifiedCountLabel": "Mais de 350 avaliações verificadas"
+    },
+    "subtitle": "Odontologia Especializada",
+    "hours": {
+      "summary": "Seg–Sex, 08h–18h · Sáb, 08h–12h",
+      "schedule": [
+        {
+          "days": "Segunda a Sexta",
+          "hours": "08h às 18h",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "days": "Sábado",
+          "hours": "08h às 12h",
+          "dayOfWeek": [
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "12:00"
+        }
+      ]
+    },
+    "timeZone": "America/Bahia",
+    "technicalResponsibles": [
+      {
+        "name": "Dr. Paulo Victor Ribeiro",
+        "registration": "10589",
+        "registry": "CRO/BA",
+        "specialty": "Reabilitação Oral e Implantodontia"
+      },
+      {
+        "name": "Dra. Thalita Prado",
+        "registration": "10590",
+        "registry": "CRO/BA",
+        "specialty": "Ortodontia e Invisalign Top Doctor"
+      }
+    ]
+  },
+  "seo": {
+    "title": "DENTARE | Odontologia Especializada em Vilas do Atlântico",
+    "description": "Implantes guiados, alinhadores invisíveis e reabilitação oral em Vilas do Atlântico, Lauro de Freitas. Planejamento individual e acolhimento na DENTARE.",
+    "locale": "pt_BR",
+    "themeColor": "#0A0F1D"
+  },
+  "navigation": [
+    {
+      "label": "Tratamentos",
+      "href": "#procedimentos"
+    },
+    {
+      "label": "Diferenciais",
+      "href": "#diferenciais"
+    },
+    {
+      "label": "Depoimentos",
+      "href": "#depoimentos"
+    },
+    {
+      "label": "Localização",
+      "href": "#localizacao"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Odontologia especializada em Vilas do Atlântico",
+    "headline": "Precisão para transformar seu sorriso. Cuidado para você se sentir em casa.",
+    "subtitle": "Precisão digital para planejar. Acolhimento humano para cuidar. Implantes guiados, alinhadores invisíveis e reabilitação oral com foco em previsibilidade, naturalidade e conforto em cada etapa.",
+    "primaryCta": {
+      "label": "Agendar Consulta via WhatsApp",
+      "whatsappMessage": "Olá, equipe DENTARE! Quero agendar minha avaliação e conversar sobre um plano de cuidado para o meu sorriso."
+    },
+    "secondaryCta": {
+      "label": "Conhecer tratamentos",
+      "href": "#procedimentos"
+    },
+    "reassurance": "Seu tempo respeitado. Suas dúvidas acolhidas. Seu tratamento explicado.",
+    "headlineAccent": "Cuidado para você se sentir em casa.",
+    "authority": {
+      "ratingLabel": "no Google Maps",
+      "socialProof": "Mais de 350 pacientes transformados em Vilas do Atlântico"
+    },
+    "visual": {
+      "eyebrow": "Precisão que acolhe",
+      "title": "Seu novo sorriso começa com um bom plano.",
+      "status": "Planejamento digital",
+      "watermark": "3D",
+      "caption": "Ilustração conceitual de planejamento dental",
+      "sealTitle": "Tecnologia 3D &",
+      "sealSubtitle": "Planejamento Guiado",
+      "footerLabel": "Ciência, estética e cuidado",
+      "footerDetail": "Em cada detalhe do seu sorriso"
+    }
+  },
+  "differentialsSection": {
+    "eyebrow": "Excelência em cada detalhe",
+    "title": "Tecnologia que planeja. Pessoas que acolhem.",
+    "description": "Precisão para planejar, tempo para ouvir e atenção ao seu conforto. Um cuidado pensado para você se sentir seguro em cada etapa."
+  },
+  "differentials": [
+    {
+      "id": "tecnologia-3d",
+      "title": "Tecnologia 3D",
+      "description": "Planejamento tridimensional para estudar sua anatomia e orientar cada etapa com mais clareza e precisão.",
+      "highlight": "Precisão antes de começar."
+    },
+    {
+      "id": "conforto",
+      "title": "Procedimentos Confortáveis",
+      "description": "Controle individualizado da dor e técnicas escolhidas com atenção ao seu conforto, do atendimento à recuperação.",
+      "highlight": "Tranquilidade em cada etapa."
+    },
+    {
+      "id": "atendimento-humanizado",
+      "title": "Atendimento Humanizado",
+      "description": "Escuta atenta, explicações claras e decisões compartilhadas. Seus receios e suas expectativas têm espaço aqui.",
+      "highlight": "Você no centro do cuidado."
+    },
+    {
+      "id": "pontualidade",
+      "title": "Pontualidade",
+      "description": "Agenda organizada e comunicação próxima para respeitar o seu tempo, sem abrir mão de um atendimento cuidadoso.",
+      "highlight": "Seu tempo também importa."
+    }
+  ],
+  "proceduresSection": {
+    "eyebrow": "Tratamentos Exclusivos",
+    "title": "Especialidades de Alta Precisão",
+    "description": "Tecnologia e experiência clínica a serviço de um sorriso que une saúde, função e naturalidade. Conheça as possibilidades e encontre, em uma avaliação, o caminho indicado para você.",
+    "note": "Cada tratamento é indicado após avaliação clínica. Técnicas, etapas e resultados variam conforme as necessidades de cada paciente."
+  },
+  "procedures": [
+    {
+      "id": "implantes-guiados",
+      "title": "Implantes Dentários Guiados",
+      "summary": "Recupere a confiança para sorrir e mastigar com um plano que integra cirurgia e estética da futura prótese.",
+      "description": "O estudo tridimensional e o guia cirúrgico auxiliam o posicionamento dos implantes conforme sua anatomia e o projeto da futura prótese. A indicação depende da avaliação clínica e dos exames.",
+      "benefits": [
+        "Planejamento tridimensional da cirurgia",
+        "Guia cirúrgico personalizado",
+        "Acessos conservadores, quando indicados"
+      ],
+      "ctaLabel": "Consultar sobre Implantes Dentários Guiados",
+      "whatsappMessage": "Olá, equipe DENTARE! Tenho interesse em implantes dentários guiados. Gostaria de agendar uma avaliação para entender a indicação, as etapas e a recuperação no meu caso.",
+      "highlight": "Planejamento computadorizado"
+    },
+    {
+      "id": "alinhadores-invisiveis",
+      "title": "Ortodontia Digital & Alinhadores Invisíveis",
+      "summary": "Alinhe seu sorriso com placas transparentes, planejamento digital e acompanhamento próximo da sua evolução.",
+      "description": "Alinhadores transparentes e removíveis movimentam os dentes progressivamente, seguindo um plano individual. A evolução é acompanhada pela equipe e depende da indicação e do uso orientado.",
+      "benefits": [
+        "Alinhadores transparentes e removíveis",
+        "Planejamento individual dos movimentos",
+        "Praticidade nas refeições e na higiene"
+      ],
+      "ctaLabel": "Consultar sobre Ortodontia Digital & Alinhadores Invisíveis",
+      "whatsappMessage": "Olá, equipe DENTARE! Quero saber se os alinhadores invisíveis são indicados para mim. Podemos agendar uma avaliação ortodôntica e conversar sobre o planejamento?",
+      "highlight": "Discrição no dia a dia"
+    },
+    {
+      "id": "reabilitacao-oral",
+      "title": "Reabilitação Oral & Próteses Fixas",
+      "summary": "Reconstrua o conforto ao mastigar e a harmonia do sorriso com soluções integradas para sua saúde bucal.",
+      "description": "Um plano integrado para dentes ausentes, desgastados ou comprometidos. Restaurações, coroas, próteses e implantes podem ser combinados conforme suas necessidades, com etapas e prioridades bem definidas.",
+      "benefits": [
+        "Plano integrado de reabilitação",
+        "Próteses fixas conforme indicação",
+        "Reconstrução da função e da estética"
+      ],
+      "ctaLabel": "Consultar sobre Reabilitação Oral & Próteses Fixas",
+      "whatsappMessage": "Olá, equipe DENTARE! Gostaria de conversar sobre reabilitação oral para melhorar minha mastigação e meu sorriso. Quero agendar uma avaliação e conhecer as possibilidades para o meu caso.",
+      "highlight": "Função e estética em equilíbrio"
+    },
+    {
+      "id": "estetica-do-sorriso",
+      "title": "Estética Dental Avançada & Facetas/Lentes",
+      "summary": "Valorize a harmonia do sorriso com escolhas de cor e forma que respeitam sua identidade e a saúde dos dentes.",
+      "description": "Clareamento, restaurações, facetas e lentes de contato dentais são avaliados conforme a saúde bucal, suas expectativas e a estrutura dos dentes. O planejamento orienta a escolha de técnicas e materiais para cada caso.",
+      "benefits": [
+        "Planejamento de cor, forma e proporção",
+        "Facetas e lentes conforme indicação",
+        "Foco em harmonia e preservação dental"
+      ],
+      "ctaLabel": "Consultar sobre Estética Dental Avançada & Facetas/Lentes",
+      "whatsappMessage": "Olá, equipe DENTARE! Tenho interesse em estética dental avançada, facetas ou lentes de contato dentais. Gostaria de agendar uma avaliação para conhecer as opções indicadas para o meu sorriso.",
+      "highlight": "Naturalidade em cada detalhe"
+    }
+  ],
+  "testimonialsSection": {
+    "eyebrow": "Histórias de quem encontrou acolhimento",
+    "title": "A Confiança de Quem Já Sorriu Conosco",
+    "description": "Experiências compartilhadas por pacientes da DENTARE.",
+    "source": "Depoimentos públicos transcritos e fornecidos pela clínica",
+    "ratingPrefix": "Nota",
+    "verificationBadge": "Avaliação verificada no Google",
+    "ratingAccessibleLabel": "estrelas de 5"
+  },
+  "testimonials": [
+    {
+      "id": "anna-flavia-marques",
+      "name": "Anna Flávia Marques",
+      "rating": 5,
+      "highlight": "Equipe educada, acolhedora e extremamente comprometida.",
+      "quote": "Recomendo a clínica com todo prazer. Equipe educada, acolhedora e extremamente comprometida. Desde a recepção até o procedimento, tudo foi feito com cuidado e atenção. O Dr. Paulo me deixou muito tranquila e explicou cada etapa do pós-operatório.",
+      "featured": true
+    },
+    {
+      "id": "maria-rita-silva",
+      "name": "Maria Rita Silva",
+      "rating": 5,
+      "highlight": "Melhor experiência possível!",
+      "quote": "Melhor experiência possível! Dr. Paulo Victor muito atencioso e competente, e a recepção é acolhedora demais. A clínica Dentare com certeza foi minha melhor escolha em Vilas do Atlântico.",
+      "featured": true
+    },
+    {
+      "id": "rayane-rode",
+      "name": "Rayane Rôde",
+      "rating": 5,
+      "highlight": "Hoje estou confiante para falar, sorrir e mastigar.",
+      "quote": "Cheguei tímida e com a autoestima abalada, mas fui acolhida por toda a equipe. Hoje estou confiante para falar, sorrir e mastigar. Muito carinho e profissionalismo com o paciente.",
+      "featured": true
+    }
+  ],
+  "faqSection": {
+    "eyebrow": "Decida com tranquilidade",
+    "title": "Suas dúvidas merecem uma boa conversa.",
+    "description": "Informação clara para você decidir com confiança. Entenda os próximos passos antes da sua avaliação.",
+    "contactTitle": "Ainda tem alguma dúvida?",
+    "contactDescription": "Converse com nossa equipe. Vamos ouvir você e orientar o agendamento com tranquilidade.",
+    "contactLabel": "Conversar com a DENTARE"
+  },
+  "faq": [
+    {
+      "id": "conforto-implantes",
+      "question": "Como é o conforto nos implantes? E a anestesia computadorizada?",
+      "answer": "O procedimento é planejado com anestesia e controle individualizado da dor. Na avaliação, a equipe explica a técnica proposta e esclarece a indicação e a disponibilidade da anestesia computadorizada para o seu caso. Após a cirurgia, pode haver sensibilidade e inchaço; você recebe orientações e acompanhamento para a recuperação."
+    },
+    {
+      "id": "adaptacao-alinhadores",
+      "question": "Como é a adaptação aos alinhadores invisíveis?",
+      "answer": "Pode haver pressão nos dentes, sensibilidade e pequenas mudanças na fala no início ou após a troca dos alinhadores. A adaptação varia de pessoa para pessoa. O uso pelo período orientado e as consultas de acompanhamento são importantes. Se houver dor persistente, feridas ou dificuldade de adaptação, entre em contato com a equipe."
+    },
+    {
+      "id": "formas-de-pagamento",
+      "question": "Quais são as facilidades de pagamento?",
+      "answer": "Após a avaliação, você recebe um plano de tratamento e um orçamento detalhado. A equipe apresenta as formas de pagamento e as possibilidades de parcelamento disponíveis para o seu caso, com todas as condições esclarecidas antes da sua decisão."
+    },
+    {
+      "id": "tempo-de-consulta",
+      "question": "Quanto tempo devo reservar para a primeira consulta?",
+      "answer": "A duração depende das suas necessidades e dos exames ou procedimentos previstos. Ao agendar pelo WhatsApp, nossa equipe informa a estimativa de tempo e as orientações para sua chegada. Na consulta, ouvimos suas expectativas, avaliamos sua saúde bucal e explicamos as possibilidades de cuidado."
+    }
+  ],
+  "closingCta": {
+    "title": "O próximo capítulo do seu sorriso começa com uma conversa.",
+    "description": "Conte o que você procura. Vamos ouvir suas necessidades e planejar os próximos passos com cuidado.",
+    "label": "Falar com a equipe DENTARE",
+    "whatsappMessage": "Olá, equipe DENTARE! Gostaria de conversar sobre minhas necessidades e agendar uma avaliação em Vilas do Atlântico."
+  },
+  "header": {
+    "homeLabel": "DENTARE — voltar ao início",
+    "navigationLabel": "Navegação principal",
+    "mobileNavigationLabel": "Menu de navegação",
+    "openMenuLabel": "Abrir menu de navegação",
+    "closeMenuLabel": "Fechar menu de navegação",
+    "menuTitle": "Explore a DENTARE",
+    "ctaLabel": "Agendar Avaliação",
+    "skipLinkLabel": "Ir para o conteúdo"
+  },
+  "locationSection": {
+    "eyebrow": "Perto de você",
+    "title": "Um cuidado próximo. Um acesso simples.",
+    "description": "Um cuidado próximo, em Vilas do Atlântico, para quem vive em Lauro de Freitas e Salvador.",
+    "hoursLabel": "Horários de atendimento",
+    "directionsLabel": "Abrir rotas no Google Maps",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Av.%20Praia%20de%20Itapu%C3%A3%2C%20Quadra%2019%2C%20Lote%2007%20%E2%80%94%20Edif%C3%ADcio%20%C3%94nix%2C%20Sala%20102%2C%20Vilas%20do%20Atl%C3%A2ntico%2C%20Lauro%20de%20Freitas%20-%20BA",
+    "copyright": "DENTARE Odontologia Especializada.",
+    "referencesLabel": "Estrutura e facilidades",
+    "references": [
+      "Estacionamento no local",
+      "Fácil acesso pela Av. Praia de Itapuã",
+      "Estrutura com acessibilidade"
+    ],
+    "mapTitle": "Localização da DENTARE no Edifício Ônix, em Vilas do Atlântico",
+    "mapCaption": "Edifício Ônix · Sala 102 · Vilas do Atlântico",
+    "mapEmbedUrl": "https://www.google.com/maps?q=Av.%20Praia%20de%20Itapu%C3%A3%2C%20Quadra%2019%2C%20Lote%2007%20%E2%80%94%20Edif%C3%ADcio%20%C3%94nix%2C%20Sala%20102%2C%20Vilas%20do%20Atl%C3%A2ntico%2C%20Lauro%20de%20Freitas%20-%20BA&output=embed"
+  },
+  "footer": {
+    "description": "Odontologia que une precisão, naturalidade e acolhimento em Vilas do Atlântico.",
+    "navigationLabel": "Explore a DENTARE",
+    "contactLabel": "Fale com a clínica",
+    "technicalLabel": "Responsáveis técnicos",
+    "rightsReserved": "Todos os direitos reservados.",
+    "privacyLabel": "Privacidade e informações legais",
+    "privacyNotice": "O mapa integrado e o WhatsApp são serviços de terceiros, com políticas de privacidade próprias. Para informações sobre o uso dos seus dados no atendimento, entre em contato com a equipe da DENTARE.",
+    "privacyLinks": [
+      {
+        "label": "Privacidade do Google",
+        "href": "https://policies.google.com/privacy?hl=pt-BR"
+      },
+      {
+        "label": "Privacidade do WhatsApp",
+        "href": "https://www.whatsapp.com/legal/privacy-policy"
+      }
+    ],
+    "faqLink": {
+      "label": "Dúvidas frequentes",
+      "href": "#duvidas"
+    },
+    "backToTopLabel": "Voltar ao início"
+  },
+  "floatingWhatsapp": {
+    "ariaLabel": "Agendar sua avaliação com a DENTARE pelo WhatsApp",
+    "label": "Agende sua avaliação",
+    "defaultStatus": "Fale com a equipe",
+    "onlineStatus": "Online agora",
+    "businessHoursStatus": "Em horário de atendimento",
+    "awayStatus": "Envie sua mensagem",
+    "confirmedOnline": null
+  }
+}

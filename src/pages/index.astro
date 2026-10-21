@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Diferenciais from '../components/Diferenciais.astro';
+import Tratamentos from '../components/Tratamentos.astro';
+import Depoimentos from '../components/Depoimentos.astro';
+import LocalizacaoFaq from '../components/LocalizacaoFaq.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsapp from '../components/FloatingWhatsapp.astro';
+---
+
+<Layout>
+  <div id="site-content">
+    <Header />
+    <main id="conteudo" tabindex="-1">
+      <Hero />
+      <Diferenciais />
+      <Tratamentos />
+      <Depoimentos />
+      <LocalizacaoFaq />
+    </main>
+    <Footer />
+  </div>
+  <FloatingWhatsapp />
+</Layout>

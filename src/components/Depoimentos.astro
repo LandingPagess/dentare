@@ -1,0 +1,43 @@
+---
+import dentare from '../data/dentare.json';
+import Icon from './Icon.astro';
+
+const { clinic, testimonialsSection: section, testimonials } = dentare;
+---
+
+<section id="depoimentos" aria-labelledby="testimonials-title" class="relative isolate border-b border-white/5 py-20 sm:py-24 lg:py-28">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-surface/40 to-background"></div>
+  <div class="container">
+    <div class="max-w-3xl">
+      <p class="text-eyebrow uppercase text-champagne">{section.eyebrow}</p>
+      <h2 id="testimonials-title" class="mt-5 text-display-lg text-ivory">{section.title}</h2>
+      <div class="mt-6 inline-flex max-w-full flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl border border-champagne/20 bg-champagne/5 px-4 py-3 text-xs leading-relaxed text-ivory-muted sm:text-sm">
+        <span class="inline-flex items-center gap-2 font-semibold text-champagne-light"><Icon name="star" class="h-4 w-4" />{section.ratingPrefix} {clinic.google.rating} {clinic.google.ratingLabel}</span>
+        <span aria-hidden="true" class="text-champagne/50">•</span>
+        <span>{clinic.google.verifiedCountLabel}</span>
+      </div>
+      <p class="mt-5 text-sm leading-loose text-ivory-muted">{section.description}</p>
+    </div>
+
+    <div class="mt-10 grid min-w-0 gap-5 lg:mt-12 lg:grid-cols-3 lg:gap-6">
+      {testimonials.map((testimonial) => (
+        <figure class="relative flex min-w-0 flex-col overflow-hidden rounded-3xl border border-white/5 bg-slate-900/50 p-6 shadow-premium backdrop-blur-sm sm:p-8">
+          <div class="flex items-start justify-between gap-4">
+            <span aria-hidden="true" class="h-12 font-display text-7xl leading-none text-champagne/50">“</span>
+            <div class="mt-3 flex items-center gap-1 text-champagne">
+              {Array.from({ length: testimonial.rating }, () => <Icon name="star" class="h-3.5 w-3.5" />)}
+              <span class="sr-only">{testimonial.rating} {section.ratingAccessibleLabel}</span>
+            </div>
+          </div>
+          <blockquote class="mb-8 mt-6 text-sm leading-loose text-ivory-muted"><p>{testimonial.quote}</p></blockquote>
+          <figcaption class="mt-auto border-t border-white/10 pt-6">
+            <p class="text-sm font-semibold text-ivory">{testimonial.name}</p>
+            <span class="mt-3 inline-flex max-w-full items-start gap-1.5 rounded-lg border border-surgical/15 bg-surgical/5 px-2.5 py-1.5 text-[10px] leading-relaxed text-surgical">
+              <Icon name="shield" class="mt-0.5 h-3 w-3" />{section.verificationBadge}
+            </span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

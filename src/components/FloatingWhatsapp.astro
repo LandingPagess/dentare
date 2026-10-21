@@ -1,0 +1,76 @@
+---
+import dentare from '../data/dentare.json';
+import Icon from './Icon.astro';
+
+const { clinic, floatingWhatsapp: content } = dentare;
+const whatsappUrl = new URL(clinic.contact.whatsappBaseUrl);
+whatsappUrl.searchParams.set('text', clinic.contact.defaultMessage);
+const availability = JSON.stringify({
+  timeZone: clinic.timeZone,
+  schedule: clinic.hours.schedule,
+  content,
+}).replace(/</g, '\\u003c');
+---
+
+<div aria-hidden="true" class="conversion-dock pointer-events-none fixed inset-x-0 bottom-0 z-40 h-[calc(6rem+env(safe-area-inset-bottom))] border-t border-white/10 bg-navy-950/95 backdrop-blur-md lg:hidden"></div>
+<div data-floating-whatsapp class="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-6 z-50 flex items-center gap-3 lg:bottom-6">
+  <div class="pointer-events-none max-w-[calc(100vw-7.5rem)] rounded-2xl border border-white/10 bg-slate-900/95 px-3 py-2.5 text-[10px] leading-relaxed text-ivory shadow-premium backdrop-blur-md sm:max-w-[14rem] sm:px-4 sm:text-[11px]">
+    <span data-whatsapp-status class="block text-surgical" aria-live="polite">{content.defaultStatus}</span>
+    <span class="block font-semibold">{content.label}</span>
+  </div>
+  <a href={whatsappUrl.href} aria-label={content.ariaLabel} class="relative inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-navy-950 shadow-lg transition-colors hover:bg-[#5BE58E] focus-visible:outline-champagne motion-reduce:transition-none">
+    <span aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-full border border-[#25D366]/60 motion-safe:animate-ping motion-safe:[animation-duration:3s]"></span>
+    <Icon name="whatsapp" class="relative h-8 w-8" />
+  </a>
+</div>
+<script is:inline id="whatsapp-availability" type="application/json" set:html={availability} />
+
+<script>
+  const statusElement = document.querySelector<HTMLElement>('[data-whatsapp-status]');
+  const configElement = document.getElementById('whatsapp-availability');
+  if (statusElement && configElement?.textContent) {
+    const config = JSON.parse(configElement.textContent) as {
+      timeZone: string;
+      schedule: Array<{ dayOfWeek: string[]; opens: string; closes: string }>;
+      content: { confirmedOnline: boolean | null; onlineStatus: string; businessHoursStatus: string; awayStatus: string };
+    };
+    const timeInMinutes = (time: string) => {
+      const [hours, minutes] = time.split(':').map(Number);
+      return hours * 60 + minutes;
+    };
+    const updateStatus = () => {
+      if (config.content.confirmedOnline === true) {
+        statusElement.textContent = config.content.onlineStatus;
+        return;
+      }
+      const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: config.timeZone, weekday: 'long', hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
+      }).formatToParts(new Date());
+      const part = (type: string) => parts.find((item) => item.type === type)?.value ?? '';
+      const now = Number(part('hour')) * 60 + Number(part('minute'));
+      const isBusinessHours = config.schedule.some((item) => item.dayOfWeek.includes(part('weekday')) && now >= timeInMinutes(item.opens) && now < timeInMinutes(item.closes));
+      statusElement.textContent = isBusinessHours ? config.content.businessHoursStatus : config.content.awayStatus;
+    };
+    updateStatus();
+    window.setInterval(updateStatus, 60_000);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) updateStatus(); });
+  }
+</script>
+
+<style is:global>
+  @media (max-width: 1023px) {
+    html:has([data-floating-whatsapp]) { scrollbar-gutter: auto; }
+    body:has([data-floating-whatsapp]) { height: 100dvh; overflow: hidden; }
+    body:has([data-floating-whatsapp]) #site-content {
+      height: calc(100dvh - 6rem - env(safe-area-inset-bottom));
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      scroll-padding-top: 6rem;
+      scrollbar-gutter: stable;
+    }
+    body:has(dialog[open]) #site-content { overflow: hidden; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    body:has([data-floating-whatsapp]) #site-content { scroll-behavior: auto; }
+  }
+</style>
