@@ -12,14 +12,12 @@ const availability = JSON.stringify({
 }).replace(/</g, '\\u003c');
 ---
 
-<div aria-hidden="true" class="conversion-dock pointer-events-none fixed inset-x-0 bottom-0 z-40 h-[calc(6rem+env(safe-area-inset-bottom))] border-t border-white/10 bg-navy-950/95 backdrop-blur-md lg:hidden"></div>
 <div data-floating-whatsapp class="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-6 z-50 flex items-center gap-3 lg:bottom-6">
-  <div class="pointer-events-none max-w-[calc(100vw-7.5rem)] rounded-2xl border border-white/10 bg-slate-900/95 px-3 py-2.5 text-[10px] leading-relaxed text-ivory shadow-premium backdrop-blur-md sm:max-w-[14rem] sm:px-4 sm:text-[11px]">
+  <div class="pointer-events-none max-w-[calc(100vw-7.5rem)] rounded-2xl border border-white/10 bg-slate-900/95 px-3 py-2.5 text-xs leading-relaxed text-ivory shadow-premium backdrop-blur-md sm:max-w-[14rem] sm:px-4">
     <span data-whatsapp-status class="block text-surgical" aria-live="polite">{content.defaultStatus}</span>
     <span class="block font-semibold">{content.label}</span>
   </div>
   <a href={whatsappUrl.href} aria-label={content.ariaLabel} class="relative inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-colors hover:bg-[#5BE58E] focus-visible:outline-champagne motion-reduce:transition-none">
-    <span aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-full border border-[#25D366]/60 motion-safe:animate-ping motion-safe:[animation-duration:3s]"></span>
     <Icon name="whatsapp" class="relative h-10 w-10" />
   </a>
 </div>
@@ -56,21 +54,3 @@ const availability = JSON.stringify({
     document.addEventListener('visibilitychange', () => { if (!document.hidden) updateStatus(); });
   }
 </script>
-
-<style is:global>
-  @media (max-width: 1023px) {
-    html:has([data-floating-whatsapp]) { scrollbar-gutter: auto; }
-    body:has([data-floating-whatsapp]) { height: 100dvh; overflow: hidden; }
-    body:has([data-floating-whatsapp]) #site-content {
-      height: calc(100dvh - 6rem - env(safe-area-inset-bottom));
-      overflow-y: auto;
-      scroll-behavior: smooth;
-      scroll-padding-top: 6rem;
-      scrollbar-gutter: stable;
-    }
-    body:has(dialog[open]) #site-content { overflow: hidden; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    body:has([data-floating-whatsapp]) #site-content { scroll-behavior: auto; }
-  }
-</style>

@@ -16,20 +16,21 @@ const headlineLead = hasAccent ? hero.headline.slice(0, -hero.headlineAccent.len
   <div aria-hidden="true" class="pointer-events-none absolute right-0 top-40 -z-10 h-[36rem] w-1/2 rounded-full bg-surgical/5 blur-3xl"></div>
   <div class="container grid min-w-0 items-center gap-10 sm:gap-14 lg:grid-cols-[1.08fr_1fr] lg:gap-10 xl:gap-16">
     <div class="flex min-w-0 flex-col">
-      <div class="order-6 mt-6 inline-flex sm:order-none sm:mb-8 sm:mt-0 max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-champagne/20 bg-champagne/5 px-4 py-3 text-[10px] leading-relaxed tracking-wide text-ivory-muted backdrop-blur-md sm:text-[11px]">
+      <div class="order-6 mt-6 inline-flex sm:order-none sm:mb-8 sm:mt-0 max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-champagne/20 bg-champagne/5 px-4 py-3 text-xs leading-relaxed tracking-wide text-ivory-muted backdrop-blur-md">
         <span class="inline-flex shrink-0 items-center gap-1.5 font-semibold text-champagne-light"><Icon name="star" class="h-3 w-3" />{clinic.google.rating} {hero.authority.ratingLabel}</span>
         <span aria-hidden="true" class="text-champagne/50">•</span>
         <span>{hero.authority.socialProof}</span>
       </div>
-      <p class="hidden items-center gap-3 sm:mb-5 sm:flex text-[10px] font-semibold uppercase tracking-eyebrow text-surgical sm:text-xs">
+      <p class="hidden items-center gap-3 sm:mb-5 sm:flex text-xs font-semibold uppercase tracking-eyebrow text-surgical">
         <span aria-hidden="true" class="h-px w-7 shrink-0 bg-surgical/60"></span>{hero.eyebrow}
       </p>
       <h1 id="hero-title" class="order-1 max-w-3xl font-display text-[clamp(1.875rem,8vw,2.5rem)] sm:order-none sm:text-[clamp(2.5rem,4.2vw,4.25rem)] leading-[1.08] tracking-display text-ivory">
         {headlineLead}{' '}
         {hasAccent && <span class="mt-2 block italic text-champagne-light">{hero.headlineAccent}</span>}
       </h1>
-      <p class="order-3 mt-5 max-w-xl text-sm leading-relaxed text-slate-300 sm:order-none sm:mt-7 sm:text-base sm:leading-[1.9]">{hero.subtitle}</p>
-      <div class="order-2 mt-5 flex flex-col items-stretch gap-3 sm:order-none sm:mt-9 sm:items-start sm:gap-5">
+      <p class="order-2 mt-4 max-w-xl text-xs font-semibold leading-relaxed text-champagne-light sm:order-none sm:mt-5 sm:text-sm">{hero.treatmentFocus}</p>
+      <p class="order-4 mt-5 max-w-xl text-sm leading-relaxed text-slate-300 sm:order-none sm:mt-7 sm:text-base sm:leading-[1.9]">{hero.subtitle}</p>
+      <div class="order-3 mt-5 flex flex-col items-stretch gap-3 sm:order-none sm:mt-9 sm:items-start sm:gap-5">
         <a href={whatsappUrl.href} class="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-champagne px-6 py-4 text-center text-[13px] font-semibold text-navy-950 shadow-glow transition-colors hover:bg-champagne-light sm:px-7">
           <Icon name="whatsapp" class="h-5 w-5" />
           {hero.primaryCta.label}
@@ -39,7 +40,7 @@ const headlineLead = hasAccent ? hero.headline.slice(0, -hero.headlineAccent.len
           {hero.secondaryCta.label}<Icon name="down" class="h-4 w-4 text-champagne" />
         </a>
       </div>
-      <p class="order-4 mt-5 max-w-md text-[11px] leading-relaxed text-slate-300 sm:order-none sm:mt-7">{hero.reassurance}</p>
+      <p class="order-5 mt-5 max-w-md text-xs leading-relaxed text-slate-300 sm:order-none sm:mt-7">{hero.reassurance}</p>
     </div>
 
     <figure class="relative mx-auto w-full min-w-0 max-w-xl pb-16 lg:pb-14">
@@ -59,19 +60,19 @@ const headlineLead = hasAccent ? hero.headline.slice(0, -hero.headlineAccent.len
           class="absolute inset-0 h-full w-full object-cover saturate-[0.8]"
         />
         <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/5 to-navy-950/15"></div>
-        <p class="absolute left-5 top-5 hidden max-w-[calc(100%-2.5rem)] items-center gap-2 rounded-full border border-white/20 bg-navy-950/30 px-3 py-2 text-[9px] uppercase tracking-[0.13em] text-ivory backdrop-blur-xl sm:left-7 sm:top-7 sm:flex sm:text-[10px]">
+        <p class="absolute left-5 top-5 hidden max-w-[calc(100%-2.5rem)] items-center gap-2 rounded-full border border-white/20 bg-navy-950/30 px-3 py-2 text-xs uppercase tracking-[0.06em] text-ivory backdrop-blur-xl sm:left-7 sm:top-7 sm:flex">
           <Icon name="sparkle" class="h-3.5 w-3.5 text-champagne-light" />{hero.visual.eyebrow}
         </p>
         <p class="absolute bottom-28 left-8 right-8 hidden max-w-sm font-display text-4xl italic leading-tight text-ivory sm:block">{hero.visual.title}</p>
       </div>
       <div class="absolute bottom-10 left-3 right-3 flex items-center gap-3 rounded-2xl border border-amber-300/20 bg-slate-900/70 px-4 py-5 shadow-2xl backdrop-blur-xl sm:left-6 sm:right-6 sm:gap-4 sm:px-6 lg:-left-6 lg:right-6">
         <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-champagne/30 bg-champagne/10 text-champagne-light sm:h-12 sm:w-12"><Icon name="award" class="h-7 w-7" /></span>
-        <span class="min-w-0"><span class="block font-display text-base leading-snug text-champagne-light sm:text-xl">{hero.visual.sealTitle}</span><span class="mt-1 block text-[10px] leading-relaxed text-ivory-muted sm:text-[11px]">{hero.visual.sealSubtitle}</span></span>
+        <span class="min-w-0"><span class="block font-display text-base leading-snug text-champagne-light sm:text-xl">{hero.visual.sealTitle}</span><span class="mt-1 block text-xs leading-relaxed text-ivory-muted">{hero.visual.sealSubtitle}</span></span>
       </div>
-      <figcaption class="absolute bottom-0 left-0 max-w-full text-left text-[9px] leading-relaxed text-ivory-muted">{hero.visual.caption} · <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" class="underline decoration-white/15 underline-offset-2 hover:text-champagne-light">{image.credit}</a></figcaption>
+      <figcaption class="absolute bottom-0 left-0 max-w-full text-xs leading-relaxed text-slate-300">{hero.visual.caption}</figcaption>
     </figure>
   </div>
-  <div class="container mt-14 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-t border-white/10 pt-6 text-[10px] font-medium uppercase tracking-[0.14em] text-ivory-muted sm:mt-20 sm:text-[11px]">
+  <div class="container mt-14 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-t border-white/10 pt-6 text-xs font-medium uppercase tracking-[0.06em] text-ivory-muted sm:mt-20">
     <span class="flex items-center gap-2"><Icon name="sparkle" class="h-3.5 w-3.5 text-champagne" />{hero.visual.footerLabel}</span>
     <span>{hero.visual.footerDetail}</span>
   </div>

@@ -34,9 +34,10 @@ if (canonicalUrl) {
   canonicalUrl.hash = '';
 }
 
-const imageUrl = socialImage
-  ? new URL(socialImage, canonicalUrl ?? Astro.site ?? Astro.url)
-  : undefined;
+const imageUrl = new URL(socialImage ?? dentare.seo.social.image, canonicalUrl ?? Astro.site ?? dentare.seo.siteUrl);
+const sharingTitle = title === dentare.seo.title ? dentare.seo.social.title : title;
+const sharingDescription = description === dentare.seo.description ? dentare.seo.social.description : description;
+const sharingImageAlt = socialImage ? socialImageAlt : dentare.seo.social.imageAlt;
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -82,16 +83,19 @@ const serializedStructuredData = JSON.stringify(structuredData).replace(/</g, '\
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={dentare.seo.locale} />
     <meta property="og:site_name" content={dentare.clinic.name} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={sharingTitle} />
+    <meta property="og:description" content={sharingDescription} />
     {canonicalUrl && <meta property="og:url" content={canonicalUrl.href} />}
-    {imageUrl && <meta property="og:image" content={imageUrl.href} />}
-    {imageUrl && <meta property="og:image:alt" content={socialImageAlt} />}
-    <meta name="twitter:card" content={imageUrl ? 'summary_large_image' : 'summary'} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    {imageUrl && <meta name="twitter:image" content={imageUrl.href} />}
-    {imageUrl && <meta name="twitter:image:alt" content={socialImageAlt} />}
+    <meta property="og:image" content={imageUrl.href} />
+    <meta property="og:image:alt" content={sharingImageAlt} />
+    {!socialImage && <meta property="og:image:type" content={dentare.seo.social.imageType} />}
+    {!socialImage && <meta property="og:image:width" content={String(dentare.seo.social.imageWidth)} />}
+    {!socialImage && <meta property="og:image:height" content={String(dentare.seo.social.imageHeight)} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={sharingTitle} />
+    <meta name="twitter:description" content={sharingDescription} />
+    <meta name="twitter:image" content={imageUrl.href} />
+    <meta name="twitter:image:alt" content={sharingImageAlt} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link
@@ -112,8 +116,11 @@ const serializedStructuredData = JSON.stringify(structuredData).replace(/</g, '\
 
   @layer base {
     :root { color-scheme: dark; }
-    html { scroll-behavior: smooth; scroll-padding-top: 9rem; scrollbar-gutter: stable; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; scrollbar-gutter: stable; }
     body { margin: 0; line-height: 1.75; }
+    @media (max-width: 1023px) {
+      body:has([data-floating-whatsapp]) { padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
+    }
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Playfair Display', ui-serif, Georgia, serif;
       font-weight: 500;

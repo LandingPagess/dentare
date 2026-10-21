@@ -21,18 +21,18 @@
       "Salvador"
     ],
     "contact": {
-      "whatsapp": "557196543550",
-      "displayPhone": "(71) 9654-3550",
-      "phoneHref": "tel:+557196543550",
-      "whatsappBaseUrl": "https://wa.me/557196543550",
+      "whatsapp": "5571996543550",
+      "displayPhone": "(71) 99654-3550",
+      "phoneHref": "tel:+5571996543550",
+      "whatsappBaseUrl": "https://wa.me/5571996543550",
       "defaultMessage": "Olá, equipe DENTARE! Gostaria de agendar uma avaliação em Vilas do Atlântico e conhecer as opções de tratamento para o meu sorriso."
     },
     "google": {
       "rating": "5.0",
-      "reviewCountLabel": "+350 avaliações",
+      "reviewCountLabel": "Mais de 210 avaliações 5 estrelas no Google Maps",
       "source": "Informações fornecidas pela clínica",
       "ratingLabel": "no Google Maps",
-      "verifiedCountLabel": "Mais de 350 avaliações verificadas"
+      "verifiedCountLabel": "Mais de 210 avaliações 5 estrelas no Google Maps"
     },
     "subtitle": "Odontologia Especializada",
     "hours": {
@@ -89,7 +89,17 @@
     "title": "DENTARE | Odontologia Especializada em Vilas do Atlântico",
     "description": "Implantes guiados, alinhadores invisíveis e reabilitação oral em Vilas do Atlântico, Lauro de Freitas. Planejamento individual e acolhimento na DENTARE.",
     "locale": "pt_BR",
-    "themeColor": "#0A0F1D"
+    "themeColor": "#0A0F1D",
+    "siteUrl": "https://dentare-theta.vercel.app",
+    "social": {
+      "title": "DENTARE | Implantes e Alinhadores em Vilas do Atlântico",
+      "description": "Planejamento digital, conforto e acolhimento para transformar seu sorriso. Mais de 210 avaliações 5 estrelas no Google Maps. Agende sua avaliação na DENTARE.",
+      "image": "/og-image.jpg",
+      "imageAlt": "DENTARE Odontologia Especializada — Implantes guiados e alinhadores invisíveis em Vilas do Atlântico.",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageType": "image/jpeg"
+    }
   },
   "navigation": [
     {
@@ -112,7 +122,7 @@
   "hero": {
     "eyebrow": "Odontologia especializada em Vilas do Atlântico",
     "headline": "Precisão para transformar seu sorriso. Cuidado para você se sentir em casa.",
-    "subtitle": "Precisão digital para planejar. Acolhimento humano para cuidar. Implantes guiados, alinhadores invisíveis e reabilitação oral com foco em previsibilidade, naturalidade e conforto em cada etapa.",
+    "subtitle": "Planejamento digital, acolhimento humano e conforto em cada etapa para cuidar da saúde, da função e da naturalidade do seu sorriso.",
     "primaryCta": {
       "label": "Agendar Consulta via WhatsApp",
       "whatsappMessage": "Olá, equipe DENTARE! Quero agendar minha avaliação e conversar sobre um plano de cuidado para o meu sorriso."
@@ -125,7 +135,7 @@
     "headlineAccent": "Cuidado para você se sentir em casa.",
     "authority": {
       "ratingLabel": "no Google Maps",
-      "socialProof": "Mais de 350 pacientes transformados em Vilas do Atlântico"
+      "socialProof": "Mais de 210 avaliações 5 estrelas no Google Maps"
     },
     "visual": {
       "eyebrow": "O cuidado começa no encontro",
@@ -159,7 +169,8 @@
         "sourceUrl": "https://unsplash.com/photos/dentist-talking-to-patient-in-a-modern-dental-office-Bg81yWKZlMg",
         "licenseUrl": "https://unsplash.com/license"
       }
-    }
+    },
+    "treatmentFocus": "Implantes Dentários Guiados e Alinhadores Invisíveis"
   },
   "differentialsSection": {
     "eyebrow": "Precisão que faz a diferença",
@@ -304,8 +315,8 @@
       "id": "anna-flavia-marques",
       "name": "Anna Flávia Marques",
       "rating": 5,
-      "highlight": "Equipe educada, acolhedora e extremamente comprometida.",
-      "quote": "Recomendo a clínica com todo prazer. Equipe educada, acolhedora e extremamente comprometida. Desde a recepção até o procedimento, tudo foi feito com cuidado e atenção. O Dr. Paulo me deixou muito tranquila e explicou cada etapa do pós-operatório.",
+      "highlight": "Equipe educada e acolhedora",
+      "quote": "Recomendo com todo prazer. Equipe educada e acolhedora, o Dr. Paulo explicou cada etapa com muito cuidado.",
       "featured": true,
       "initials": "AF"
     },
@@ -322,8 +333,8 @@
       "id": "rayane-rode",
       "name": "Rayane Rôde",
       "rating": 5,
-      "highlight": "Hoje estou confiante para falar, sorrir e mastigar.",
-      "quote": "Cheguei tímida e com a autoestima abalada, mas fui acolhida por toda a equipe. Hoje estou confiante para falar, sorrir e mastigar. Muito carinho e profissionalismo com o paciente.",
+      "highlight": "Fui muito bem acolhida por toda a equipe da clínica.",
+      "quote": "Fui muito bem acolhida por toda a equipe da clínica. Fiz a extração do siso com o Dr. Paulo e todo o procedimento e pós-operatório foram extremamente tranquilos e com muita atenção.",
       "featured": true,
       "initials": "RR"
     }

@@ -20,7 +20,7 @@ const consultationUrl = (message: string) => {
   <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-premium-radial opacity-60"></div>
   <div class="container">
     <div class="max-w-3xl">
-      <p class="inline-flex max-w-full items-center gap-2 rounded-full border border-champagne/20 bg-champagne/5 px-4 py-2 text-[10px] font-semibold uppercase tracking-eyebrow text-champagne-light sm:text-xs">
+      <p class="inline-flex max-w-full items-center gap-2 rounded-full border border-champagne/20 bg-champagne/5 px-4 py-2 text-xs font-semibold uppercase tracking-eyebrow text-champagne-light">
         <Icon name="sparkle" class="h-3.5 w-3.5" />{section.eyebrow}
       </p>
       <h2 id="procedures-title" class="mt-6 text-display-lg text-ivory">{section.title}</h2>
@@ -37,7 +37,7 @@ const consultationUrl = (message: string) => {
             </span>
             <span aria-hidden="true" class="font-display text-4xl italic text-champagne/20 transition-colors duration-300 group-hover:text-champagne/40 motion-reduce:transition-none">{String(index + 1).padStart(2, '0')}</span>
           </div>
-          <p class="relative mt-7 inline-flex max-w-full items-center gap-2 self-start rounded-full border border-surgical/20 bg-surgical/5 px-3 py-1.5 text-[9px] font-medium uppercase tracking-[0.12em] text-surgical sm:text-[10px]">
+          <p class="relative mt-7 inline-flex max-w-full items-center gap-2 self-start rounded-full border border-surgical/20 bg-surgical/5 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.06em] text-surgical">
             <span aria-hidden="true" class="h-1 w-1 shrink-0 rounded-full bg-surgical"></span>{procedure.category}
           </p>
           <h3 id={`procedure-${procedure.id}`} class="relative mt-3 max-w-lg text-2xl leading-snug text-ivory sm:text-[1.75rem]">{procedure.title}</h3>

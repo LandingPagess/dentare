@@ -24,7 +24,7 @@ whatsappUrl.searchParams.set('text', clinic.contact.defaultMessage);
             {location.amenities.map((amenity) => (
               <li class="flex min-w-0 items-center gap-3 sm:flex-col sm:items-start sm:gap-3 lg:flex-row lg:items-center xl:flex-col xl:items-start">
                 <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-champagne/20 bg-champagne/5 text-champagne-light"><Icon name={amenityIcons[amenity.id] ?? 'accessibility'} class="h-5 w-5" /></span>
-                <span class="text-[11px] leading-relaxed text-ivory-muted">{amenity.label}</span>
+                <span class="text-xs leading-relaxed text-ivory-muted">{amenity.label}</span>
               </li>
             ))}
           </ul>
@@ -44,7 +44,7 @@ whatsappUrl.searchParams.set('text', clinic.contact.defaultMessage);
         <div class="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] border border-white/5 sm:aspect-[16/10]">
           <iframe src={location.mapEmbedUrl} title={location.mapTitle} loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen class="absolute inset-0 h-full w-full border-0 contrast-[0.95] grayscale-[0.9] invert-[0.9] hue-rotate-180 brightness-[0.8]"></iframe>
         </div>
-        <figcaption class="border-t border-white/5 px-5 py-3 text-[11px] leading-relaxed text-ivory-muted">{location.mapCaption}</figcaption>
+        <figcaption class="border-t border-white/5 px-5 py-3 text-xs leading-relaxed text-ivory-muted">{location.mapCaption}</figcaption>
       </figure>
     </div>
 

@@ -17,7 +17,7 @@ const year = new Intl.DateTimeFormat('pt-BR', { year: 'numeric', timeZone: clini
             <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-champagne/30 bg-champagne/10 text-champagne-light"><Icon name="shield" class="h-5 w-5" /></span>
             <div class="min-w-0">
               <h3 class="text-xl leading-snug text-ivory sm:text-2xl">{responsible.name}</h3>
-              <p class="mt-3 inline-flex rounded-full border border-champagne/25 bg-champagne/10 px-3 py-1 text-[11px] font-semibold tracking-wide text-champagne-light">{responsible.registry} {responsible.registration}</p>
+              <p class="mt-3 inline-flex rounded-full border border-champagne/25 bg-champagne/10 px-3 py-1 text-xs font-semibold tracking-wide text-champagne-light">{responsible.registry} {responsible.registration}</p>
               <p class="mt-3 text-xs leading-relaxed text-slate-300">{responsible.specialty}</p>
             </div>
           </article>
@@ -28,11 +28,11 @@ const year = new Intl.DateTimeFormat('pt-BR', { year: 'numeric', timeZone: clini
       <div class="min-w-0 max-w-sm">
         <a href="#inicio" aria-label={footer.backToTopLabel} class="inline-flex min-h-11 flex-col justify-center">
           <span class="font-display text-3xl leading-none tracking-[0.16em] text-ivory">{clinic.shortName}</span>
-          <span class="mt-3 text-[9px] uppercase tracking-[0.17em] text-champagne">{clinic.subtitle}</span>
+          <span class="mt-3 text-xs uppercase tracking-[0.06em] text-champagne">{clinic.subtitle}</span>
         </a>
         <p class="mt-6 text-sm leading-loose text-ivory-muted">{footer.description}</p>
         <div class="mt-6">
-          <p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-champagne-light">{footer.socialLabel}</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.06em] text-champagne-light">{footer.socialLabel}</p>
           <a href={instagram.url} target="_blank" rel="noopener noreferrer" aria-label={instagram.ariaLabel} class="group mt-3 inline-flex min-h-11 max-w-full items-center gap-3 text-xs text-slate-200 transition-colors hover:text-champagne-light">
             <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-champagne/20 text-champagne-light transition-colors group-hover:border-champagne/50 group-hover:bg-champagne/10"><Icon name="instagram" /></span>
             <span class="min-w-0 break-all">{instagram.handle}</span>
@@ -40,19 +40,19 @@ const year = new Intl.DateTimeFormat('pt-BR', { year: 'numeric', timeZone: clini
         </div>
       </div>
       <nav aria-label={footer.navigationLabel}>
-        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-champagne-light">{footer.navigationLabel}</p>
+        <p class="text-xs font-semibold uppercase tracking-[0.06em] text-champagne-light">{footer.navigationLabel}</p>
         <ul class="mt-5 space-y-1">
           {[...navigation, footer.faqLink].map((link) => <li><a href={link.href} class="inline-flex min-h-11 items-center text-sm text-ivory-muted transition-colors hover:text-champagne-light">{link.label}</a></li>)}
         </ul>
       </nav>
       <div class="min-w-0">
-        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-champagne-light">{footer.contactLabel}</p>
+        <p class="text-xs font-semibold uppercase tracking-[0.06em] text-champagne-light">{footer.contactLabel}</p>
         <address class="mt-6 text-sm not-italic leading-loose text-ivory-muted">{clinic.address.full}</address>
         <a href={clinic.contact.phoneHref} class="mt-3 inline-flex min-h-11 items-center gap-2 text-sm text-ivory transition-colors hover:text-champagne-light"><Icon name="message" class="h-4 w-4 text-champagne" />{clinic.contact.displayPhone}</a>
         <p class="mt-3 text-xs leading-loose text-ivory-muted">{clinic.hours.summary}</p>
       </div>
     </div>
-    <div class="pt-7 text-[11px] leading-relaxed text-ivory-muted">
+    <div class="pt-7 text-xs leading-relaxed text-ivory-muted">
       <p>© {year} {clinic.name}. {footer.rightsReserved}</p>
       <p class="mt-3 max-w-3xl">{proceduresSection.note}</p>
       <details class="group mt-4 max-w-3xl">

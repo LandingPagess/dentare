@@ -24,9 +24,9 @@ export default {
       fontSize: {
         'display-xl': ['clamp(2.75rem, 6vw, 5.5rem)', { lineHeight: '1.08', letterSpacing: '-0.035em' }],
         'display-lg': ['clamp(2.125rem, 4vw, 3.75rem)', { lineHeight: '1.15', letterSpacing: '-0.025em' }],
-        eyebrow: ['0.75rem', { lineHeight: '1.5', letterSpacing: '0.18em', fontWeight: '600' }],
+        eyebrow: ['0.75rem', { lineHeight: '1.5', letterSpacing: '0.08em', fontWeight: '600' }],
       },
-      letterSpacing: { display: '-0.035em', editorial: '-0.025em', eyebrow: '0.18em' },
+      letterSpacing: { display: '-0.035em', editorial: '-0.025em', eyebrow: '0.08em' },
       boxShadow: {
         premium: '0 24px 80px -24px rgb(0 0 0 / 0.55)',
         glow: '0 0 40px -16px rgb(197 168 128 / 0.3)',

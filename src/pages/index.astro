@@ -12,21 +12,19 @@ import SectionDivider from '../components/SectionDivider.astro';
 ---
 
 <Layout>
-  <div id="site-content">
-    <Header />
-    <main id="conteudo" tabindex="-1">
-      <Hero />
-      <SectionDivider />
-      <Diferenciais />
-      <SectionDivider />
-      <Tratamentos />
-      <SectionDivider />
-      <Depoimentos />
-      <SectionDivider />
-      <LocalizacaoFaq />
-    </main>
+  <Header />
+  <main id="conteudo" tabindex="-1">
+    <Hero />
     <SectionDivider />
-    <Footer />
-  </div>
+    <Diferenciais />
+    <SectionDivider />
+    <Tratamentos />
+    <SectionDivider />
+    <Depoimentos />
+    <SectionDivider />
+    <LocalizacaoFaq />
+  </main>
+  <SectionDivider />
+  <Footer />
   <FloatingWhatsapp />
 </Layout>
