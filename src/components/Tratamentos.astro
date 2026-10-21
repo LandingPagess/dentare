@@ -55,12 +55,6 @@ const consultationUrl = (message: string) => {
               <Icon name="whatsapp" /><span class="min-w-0">{procedure.ctaLabel}</span>
               <Icon name="arrow" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-focus-within:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none" />
             </a>
-            {procedure.simulator && (
-              <a href={procedure.simulator.url} target="_blank" rel="noopener noreferrer" class="group/simulator mt-1 inline-flex min-h-11 max-w-full items-center gap-2 text-xs leading-relaxed text-slate-300 underline decoration-champagne/25 underline-offset-4 transition-colors hover:text-champagne-light hover:decoration-champagne/60 focus-visible:text-champagne-light">
-                <span class="min-w-0">{procedure.simulator.label}</span>
-                <Icon name="arrow" class="h-3.5 w-3.5 transition-transform duration-300 group-hover/simulator:-translate-y-0.5 group-hover/simulator:translate-x-0.5 motion-reduce:transform-none motion-reduce:transition-none" />
-              </a>
-            )}
           </div>
         </article>
       ))}

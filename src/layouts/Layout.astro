@@ -51,7 +51,7 @@ const structuredData = {
   sameAs: [dentare.clinic.social.instagram.url],
   address: {
     '@type': 'PostalAddress',
-    streetAddress: `${dentare.clinic.address.street}, ${dentare.clinic.address.block}, ${dentare.clinic.address.lot}, ${dentare.clinic.address.complement}, ${dentare.clinic.address.neighborhood}`,
+    streetAddress: `${dentare.clinic.address.street}, ${dentare.clinic.address.number}, ${dentare.clinic.address.block}, ${dentare.clinic.address.lot}, ${dentare.clinic.address.complement}, ${dentare.clinic.address.neighborhood}`,
     addressLocality: dentare.clinic.address.city,
     addressRegion: dentare.clinic.address.state,
     addressCountry: dentare.clinic.address.country,
@@ -82,7 +82,8 @@ const serializedStructuredData = JSON.stringify(structuredData).replace(/</g, '\
       fetchpriority="high"
     />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/png" href={dentare.clinic.logo.icon.src} sizes={`${dentare.clinic.logo.icon.width}x${dentare.clinic.logo.icon.height}`} />
+    <link rel="icon" type="image/svg+xml" href={dentare.clinic.logo.src} />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="noindex, nofollow" />

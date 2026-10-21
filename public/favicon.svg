@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="65" viewBox="0 0 100 65" fill="none">
+  <defs>
+    <linearGradient id="dentare-gold" x1="12" y1="0" x2="85" y2="65" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3E5AB" />
+      <stop offset="0.5" stop-color="#D4AF37" />
+      <stop offset="1" stop-color="#AA771C" />
+    </linearGradient>
+  </defs>
+  <g fill="url(#dentare-gold)">
+    <path d="M19 12C39 7 62 2 88 0C72 8 45 11 19 12Z" />
+    <path d="M14 27C39 20 66 16 88 14C73 22 43 26 14 27Z" />
+    <path d="M10 42C35 35 62 31 85 29C71 37 39 41 10 42Z" />
+    <path d="M0 44C27 56 69 59 100 42C78 69 34 74 0 44Z" />
+  </g>
+</svg>

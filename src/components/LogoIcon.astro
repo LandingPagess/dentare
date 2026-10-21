@@ -1,0 +1,26 @@
+---
+import logoSvg from '../../public/favicon.svg?raw';
+
+interface Props {
+  idPrefix: string;
+  class?: string;
+}
+
+const { idPrefix, class: className } = Astro.props;
+const artwork = logoSvg
+  .slice(logoSvg.indexOf('>') + 1, logoSvg.lastIndexOf('</svg>'))
+  .replaceAll('dentare-gold', `${idPrefix}-gold`);
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="100"
+  height="65"
+  viewBox="0 0 100 65"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+  class={className}
+>
+  <Fragment set:html={artwork} />
+</svg>
