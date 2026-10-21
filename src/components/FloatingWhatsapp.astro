@@ -18,9 +18,9 @@ const availability = JSON.stringify({
     <span data-whatsapp-status class="block text-surgical" aria-live="polite">{content.defaultStatus}</span>
     <span class="block font-semibold">{content.label}</span>
   </div>
-  <a href={whatsappUrl.href} aria-label={content.ariaLabel} class="relative inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-navy-950 shadow-lg transition-colors hover:bg-[#5BE58E] focus-visible:outline-champagne motion-reduce:transition-none">
+  <a href={whatsappUrl.href} aria-label={content.ariaLabel} class="relative inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-colors hover:bg-[#5BE58E] focus-visible:outline-champagne motion-reduce:transition-none">
     <span aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-full border border-[#25D366]/60 motion-safe:animate-ping motion-safe:[animation-duration:3s]"></span>
-    <Icon name="whatsapp" class="relative h-8 w-8" />
+    <Icon name="whatsapp" class="relative h-10 w-10" />
   </a>
 </div>
 <script is:inline id="whatsapp-availability" type="application/json" set:html={availability} />

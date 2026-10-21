@@ -3,6 +3,7 @@ import dentare from '../data/dentare.json';
 import Icon from './Icon.astro';
 
 const { clinic, navigation, header } = dentare;
+const { instagram } = clinic.social;
 const whatsappUrl = new URL(clinic.contact.whatsappBaseUrl);
 whatsappUrl.searchParams.set('text', clinic.contact.defaultMessage);
 ---
@@ -35,9 +36,14 @@ whatsappUrl.searchParams.set('text', clinic.contact.defaultMessage);
         ))}
       </ul>
     </nav>
-    <a href={whatsappUrl.href} class="hidden min-h-11 items-center justify-center gap-3 rounded-full bg-champagne px-5 py-3 text-xs font-semibold text-navy-950 transition-colors hover:bg-champagne-light lg:inline-flex">
-      {header.ctaLabel}<Icon name="arrow" class="h-4 w-4" />
-    </a>
+    <div class="hidden shrink-0 items-center gap-3 lg:flex">
+      <a href={whatsappUrl.href} class="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-champagne px-4 py-3 text-xs font-semibold text-navy-950 transition-colors hover:bg-champagne-light xl:px-5">
+        <Icon name="whatsapp" />{header.ctaLabel}
+      </a>
+      <a href={instagram.url} target="_blank" rel="noopener noreferrer" aria-label={instagram.ariaLabel} class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-champagne/20 text-champagne-light transition-colors hover:border-champagne/50 hover:bg-champagne/10">
+        <Icon name="instagram" />
+      </a>
+    </div>
     <button type="button" data-menu-open aria-label={header.openMenuLabel} aria-controls="mobile-navigation" aria-expanded="false" class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 text-champagne transition-colors hover:bg-white/5 lg:hidden">
       <Icon name="menu" class="h-6 w-6" />
     </button>
@@ -57,9 +63,14 @@ whatsappUrl.searchParams.set('text', clinic.contact.defaultMessage);
         ))}
       </ul>
     </nav>
-    <a href={whatsappUrl.href} class="mt-7 flex min-h-12 items-center justify-center gap-3 rounded-full bg-champagne px-5 py-3 text-sm font-semibold text-navy-950 hover:bg-champagne-light">
-      <Icon name="message" />{header.ctaLabel}
-    </a>
+    <div class="mt-7 flex items-center gap-3">
+      <a href={whatsappUrl.href} class="flex min-h-12 min-w-0 flex-1 items-center justify-center gap-2 rounded-full bg-champagne px-3 py-3 text-center text-xs font-semibold text-navy-950 hover:bg-champagne-light">
+        <Icon name="whatsapp" /><span class="min-w-0">{header.ctaLabel}</span>
+      </a>
+      <a href={instagram.url} target="_blank" rel="noopener noreferrer" aria-label={instagram.ariaLabel} class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-champagne/20 text-champagne-light transition-colors hover:border-champagne/50 hover:bg-champagne/10">
+        <Icon name="instagram" />
+      </a>
+    </div>
     <div class="mt-7 space-y-3 border-t border-white/10 pt-6 text-xs leading-relaxed text-ivory-muted">
       <p class="flex items-start gap-2"><Icon name="pin" class="mt-0.5 h-4 w-4 text-champagne" />{clinic.address.short}</p>
       <p class="flex items-start gap-2"><Icon name="clock" class="mt-0.5 h-4 w-4 text-champagne" />{clinic.hours.summary}</p>

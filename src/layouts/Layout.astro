@@ -45,6 +45,7 @@ const structuredData = {
   description: dentare.seo.description,
   ...(canonicalUrl && { url: canonicalUrl.href }),
   telephone: `+${dentare.clinic.contact.whatsapp}`,
+  sameAs: [dentare.clinic.social.instagram.url],
   address: {
     '@type': 'PostalAddress',
     streetAddress: `${dentare.clinic.address.street}, ${dentare.clinic.address.block}, ${dentare.clinic.address.lot}, ${dentare.clinic.address.complement}, ${dentare.clinic.address.neighborhood}`,
