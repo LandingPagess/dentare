@@ -1,5 +1,7 @@
 ---
 import dentare from '../data/dentare.json';
+import plusJakartaSansUrl from '../assets/fonts/plus-jakarta-sans-latin-variable.woff2?url';
+import playfairDisplayUrl from '../assets/fonts/playfair-display-latin-variable.woff2?url';
 
 interface Props {
   title?: string;
@@ -80,6 +82,7 @@ const serializedStructuredData = JSON.stringify(structuredData).replace(/</g, '\
       fetchpriority="high"
     />
     <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href={dentare.clinic.logo.icon.src} sizes={`${dentare.clinic.logo.icon.width}x${dentare.clinic.logo.icon.height}`} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="noindex, nofollow" />
@@ -104,12 +107,8 @@ const serializedStructuredData = JSON.stringify(structuredData).replace(/</g, '\
     <meta name="twitter:description" content={sharingDescription} />
     <meta name="twitter:image" content={imageUrl.href} />
     <meta name="twitter:image:alt" content={sharingImageAlt} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href={plusJakartaSansUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href={playfairDisplayUrl} as="font" type="font/woff2" crossorigin="anonymous" />
     <script is:inline type="application/ld+json" set:html={serializedStructuredData} />
   </head>
   <body class:list={['min-h-screen bg-background font-sans text-ivory antialiased', className, bodyClass]}>
@@ -118,6 +117,21 @@ const serializedStructuredData = JSON.stringify(structuredData).replace(/</g, '\
 </html>
 
 <style is:global>
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('../assets/fonts/plus-jakarta-sans-latin-variable.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('../assets/fonts/playfair-display-latin-variable.woff2') format('woff2');
+  }
+
   @tailwind base;
   @tailwind components;
   @tailwind utilities;

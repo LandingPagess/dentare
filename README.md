@@ -24,7 +24,7 @@ O build executa a verificação de tipos do Astro antes de gerar o site estátic
 
 - `src/data/dentare.json`: conteúdo, contato, procedimentos, depoimentos e FAQ.
 - `tailwind.config.mjs`: cores, tipografia e tokens visuais.
-- `src/layouts/Layout.astro`: documento HTML, SEO, fontes, dados estruturados e Tailwind global.
+- `src/layouts/Layout.astro`: documento HTML, SEO, fontes locais, dados estruturados e Tailwind global.
 - `src/components/Header.astro`: navegação fixa, horário oficial e menu mobile com diálogo acessível.
 - `src/components/Hero.astro`: abertura editorial com fotografia humana responsiva, iluminação suave e selo flutuante das especialidades.
 - `src/components/Diferenciais.astro`: bento assimétrico, com destaque amplo de tecnologia 3D e três pilares compactos.
@@ -47,7 +47,13 @@ A fotografia do Hero é ilustrativa, de Harold Hisona no Unsplash, e não identi
 
 A prévia usa uma única meta tag `robots` com `noindex, nofollow`, fixa no Layout.
 
-O selo do WhatsApp consulta os horários oficiais em `America/Bahia`. Ele informa horário de atendimento ou convida ao envio de mensagem; `Online agora` só aparece se `floatingWhatsapp.confirmedOnline` for explicitamente `true`. Não há integração com presença do WhatsApp. A rolagem é nativa da janela, inclusive no mobile; o contêiner de rolagem `#site-content` foi removido. O `html` usa `scroll-padding-top: 5rem` para as âncoras e o fim da página reserva espaço para o botão flutuante. O bloqueio temporário da rolagem existe somente enquanto o menu modal está aberto. Abaixo de 1024px, o WhatsApp exibe apenas o botão circular; quando sua área (com margem de 8px) coincide com um link, controle ou mapa, o botão fica invisível até liberar essa ação. A checagem responde à rolagem, redimensionamento, carregamento de fontes e mudanças de tamanho do conteúdo, sem alterar a rolagem nativa.
+O selo do WhatsApp consulta os horários oficiais em `America/Bahia`. Ele informa horário de atendimento ou convida ao envio de mensagem; `Online agora` só aparece se `floatingWhatsapp.confirmedOnline` for explicitamente `true`. Não há integração com presença do WhatsApp. A rolagem é nativa da janela, inclusive no mobile; o contêiner de rolagem `#site-content` foi removido. O `html` usa `scroll-padding-top: 5rem` para as âncoras e o fim da página reserva espaço para o botão flutuante. O bloqueio temporário da rolagem existe somente enquanto o menu modal está aberto. Abaixo de 1024px, o WhatsApp exibe apenas o botão circular; quando sua área (com margem de 8px) coincide com um link, controle ou mapa, o botão fica invisível até liberar essa ação. A checagem usa `IntersectionObserver` com uma área de interseção ajustada ao botão. As posições são fornecidas pelo navegador de forma assíncrona, sem leituras síncronas de layout nem varredura dos links durante o scroll. O observador é reconstruído quando o viewport muda, e reage às interseções provocadas por rolagem ou mudanças no conteúdo.
+
+## Carregamento
+
+O CSS da landing é embutido no HTML pelo `build.inlineStylesheets: 'always'`, evitando uma requisição de stylesheet no caminho crítico. Plus Jakarta Sans e Playfair Display são servidas como WOFF2 variáveis locais (Latin, pesos de 400 a 700) em `src/assets/fonts/`, com `font-display: swap`. O build gera nomes com hash e o Layout pré-carrega as duas fontes; não há dependência de Google Fonts no navegador. As licenças OFL ficam em `public/font-licenses/`. Os arquivos são as distribuições oficiais do Google Fonts: https://github.com/google/fonts/tree/main/ofl/plusjakartasans e https://github.com/google/fonts/tree/main/ofl/playfairdisplay.
+
+O Hero mantém `loading="eager"`, `fetchpriority="high"`, dimensões explícitas e preload responsivo com os mesmos `srcset` e `sizes` da imagem.
 
 ## Dependências
 

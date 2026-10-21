@@ -19,14 +19,20 @@ whatsappUrl.searchParams.set('text', clinic.contact.defaultMessage);
     </div>
   </div>
   <div class="container flex h-20 items-center justify-between gap-5 lg:h-[5.5rem]">
-    <a href="#inicio" aria-label={header.homeLabel} class="group flex min-w-0 items-center gap-2 sm:gap-3">
-      <svg viewBox="0 0 36 44" class="h-10 w-8 text-champagne" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" focusable="false">
-        <path d="M5 6h11c12 0 17 7 17 16S28 38 16 38H5V6Z" />
-        <path d="M11 12h5c8 0 11 4 11 10s-3 10-11 10h-5V12ZM1 22h17" opacity=".6" />
-      </svg>
+    <a href="#" aria-label={header.homeLabel} class="group inline-flex min-w-0 items-center gap-2 sm:gap-3">
+      <img
+        src={clinic.logo.icon.src}
+        alt=""
+        aria-hidden="true"
+        width={clinic.logo.icon.width}
+        height={clinic.logo.icon.height}
+        loading="eager"
+        decoding="async"
+        class="h-8 w-auto max-w-none shrink-0 object-contain [clip-path:inset(0_0_12%_0)] sm:h-9"
+      />
       <span class="flex min-w-0 flex-col">
-        <span class="font-display text-[1.4rem] leading-none sm:text-[1.6rem] tracking-[0.15em] text-ivory transition-colors group-hover:text-champagne-light">{clinic.shortName}</span>
-        <span class="mt-2 max-w-[10rem] text-xs font-medium leading-snug tracking-normal text-ivory-muted sm:max-w-none sm:uppercase sm:tracking-[0.06em]">{clinic.subtitle}</span>
+        <span class="font-display text-[1.3rem] leading-none tracking-[0.12em] text-ivory transition-colors group-hover:text-champagne-light sm:text-[1.6rem]">{clinic.shortName}</span>
+        <span class="mt-1.5 text-xs font-medium uppercase leading-snug tracking-[0.04em] text-ivory-muted sm:tracking-[0.06em]">{clinic.subtitle}</span>
       </span>
     </a>
     <nav aria-label={header.navigationLabel} class="hidden lg:block">

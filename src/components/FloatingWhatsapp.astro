@@ -55,43 +55,60 @@ const availability = JSON.stringify({
   }
 
   const floatingButton = document.querySelector<HTMLElement>('[data-floating-whatsapp]');
-  if (floatingButton) {
+  if (floatingButton && 'IntersectionObserver' in window) {
     const mobile = window.matchMedia('(max-width: 1023px)');
     const actions = Array.from(document.querySelectorAll<HTMLElement>('a[href], button, summary, input:not([type="hidden"]), select, textarea, iframe, [role="button"]'))
       .filter((action) => !floatingButton.contains(action));
-    let updatePending = false;
+    let geometryObserver: IntersectionObserver | undefined;
+    let actionObserver: IntersectionObserver | undefined;
+    let observerVersion = 0;
 
-    const updateOverlap = () => {
-      updatePending = false;
+    const observeActions = () => {
+      const version = ++observerVersion;
+      geometryObserver?.disconnect();
+      actionObserver?.disconnect();
       if (!mobile.matches) {
         floatingButton.removeAttribute('data-obstructed');
         return;
       }
-      const bounds = floatingButton.getBoundingClientRect();
-      const overlapsAction = actions.some((action) => {
-        if (!action.getClientRects().length || getComputedStyle(action).visibility === 'hidden') return false;
-        const rect = action.getBoundingClientRect();
-        return rect.right > bounds.left - 8 && rect.left < bounds.right + 8
-          && rect.bottom > bounds.top - 8 && rect.top < bounds.bottom + 8;
+      floatingButton.setAttribute('data-obstructed', '');
+      geometryObserver = new IntersectionObserver(([entry]) => {
+        if (version !== observerVersion || !entry?.rootBounds) return;
+        geometryObserver?.disconnect();
+        const bounds = entry.boundingClientRect;
+        const root = entry.rootBounds;
+        const inset = [
+          Math.max(0, bounds.top - root.top - 8),
+          Math.max(0, root.right - bounds.right - 8),
+          Math.max(0, root.bottom - bounds.bottom - 8),
+          Math.max(0, bounds.left - root.left - 8),
+        ];
+        const overlapping = new Set<Element>();
+        actionObserver = new IntersectionObserver((entries) => {
+          if (version !== observerVersion) return;
+          for (const action of entries) {
+            if (action.isIntersecting && action.intersectionRect.width > 0 && action.intersectionRect.height > 0) {
+              overlapping.add(action.target);
+            } else {
+              overlapping.delete(action.target);
+            }
+          }
+          floatingButton.toggleAttribute('data-obstructed', overlapping.size > 0);
+        }, {
+          rootMargin: inset.map((value) => `${-value}px`).join(' '),
+          threshold: 0,
+        });
+        actions.forEach((action) => actionObserver?.observe(action));
       });
-      floatingButton.toggleAttribute('data-obstructed', overlapsAction);
+      geometryObserver.observe(floatingButton);
     };
 
-    const scheduleUpdate = () => {
-      if (updatePending) return;
-      updatePending = true;
-      window.requestAnimationFrame(updateOverlap);
-    };
-
-    window.addEventListener('scroll', scheduleUpdate, { passive: true });
-    window.addEventListener('resize', scheduleUpdate, { passive: true });
-    window.visualViewport?.addEventListener('resize', scheduleUpdate, { passive: true });
-    mobile.addEventListener('change', scheduleUpdate);
-    document.addEventListener('toggle', scheduleUpdate, true);
-    document.fonts.ready.then(scheduleUpdate);
-    new ResizeObserver(scheduleUpdate).observe(document.body);
-    updateOverlap();
+    window.addEventListener('resize', observeActions, { passive: true });
+    window.visualViewport?.addEventListener('resize', observeActions, { passive: true });
+    mobile.addEventListener('change', observeActions);
+    observeActions();
   }
+
 </script>
 
 <style>

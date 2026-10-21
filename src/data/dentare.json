@@ -72,6 +72,16 @@
     "team": {
       "label": "Corpo Clínico",
       "description": "Dr. Paulo Victor Ribeiro e equipe multidisciplinar"
+    },
+    "logo": {
+      "src": "/logo-dentare.png",
+      "width": 150,
+      "height": 150,
+      "icon": {
+        "src": "/logo-icone.png",
+        "width": 150,
+        "height": 87
+      }
     }
   },
   "seo": {

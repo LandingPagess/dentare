@@ -1,0 +1,11 @@
+.git/
+.vercel/
+node_modules/
+dist/
+.astro/
+.agents
+.codex
+.aws
+.env
+.env.*
+npm-debug.log*

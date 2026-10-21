@@ -5,6 +5,9 @@ import dentare from './src/data/dentare.json' with { type: 'json' };
 
 export default defineConfig({
   site: process.env.SITE_URL || dentare.seo.siteUrl,
+  build: {
+    inlineStylesheets: 'always',
+  },
   vite: {
     css: {
       postcss: {
