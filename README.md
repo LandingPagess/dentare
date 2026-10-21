@@ -34,6 +34,7 @@ O build executa a verificação de tipos do Astro antes de gerar o site estátic
 - `src/components/Footer.astro`: navegação institucional, responsabilidade técnica e informações de privacidade.
 - `src/components/FloatingWhatsapp.astro`: conversão persistente com faixa reservada no mobile, sem cobrir o conteúdo.
 - `src/components/Icon.astro`: ícones SVG de traço linear, sem dependências adicionais.
+- `src/components/SectionDivider.astro`: divisória decorativa em gradiente entre as seções principais.
 - `src/pages/index.astro`: composição completa da landing page.
 
 O layout aceita `title`, `description`, `canonical`, `socialImage`, `socialImageAlt`, `noindex`, `class` e `bodyClass`. Configure `site` em `astro.config.mjs` quando o domínio de produção estiver definido; o layout gera a URL canônica e `og:url` a partir dele. Também é possível fornecer `canonical` explicitamente. Sem domínio definido, essas tags são omitidas.

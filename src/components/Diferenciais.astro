@@ -11,13 +11,13 @@ const icons: Record<string, 'shield' | 'heart' | 'clock'> = {
 };
 ---
 
-<section id="diferenciais" aria-labelledby="differentials-title" class="relative isolate border-b border-white/5 py-20 sm:py-24 lg:py-28">
+<section id="diferenciais" aria-labelledby="differentials-title" class="relative isolate py-20 sm:py-24 lg:py-28">
   <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-surface/40 to-background"></div>
   <div class="container">
     <div class="max-w-3xl">
       <p class="flex items-center gap-3 text-eyebrow uppercase text-champagne"><span aria-hidden="true" class="h-px w-8 shrink-0 bg-champagne/50"></span>{section.eyebrow}</p>
       <h2 id="differentials-title" class="mt-5 text-display-lg text-ivory">{section.title}</h2>
-      <p class="mt-5 max-w-2xl text-sm leading-loose text-ivory-muted sm:text-base">{section.description}</p>
+      <p class="mt-5 max-w-2xl text-sm leading-loose text-slate-200 sm:text-base">{section.description}</p>
     </div>
 
     <div class="mt-10 grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-12 lg:gap-5">
@@ -28,13 +28,13 @@ const icons: Record<string, 'shield' | 'heart' | 'clock'> = {
           <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-champagne-light">{section.featuredEyebrow}</p>
         </div>
         <h3 id={`differential-${featured.id}`} class="relative mt-7 max-w-sm font-display text-3xl leading-tight text-ivory sm:text-4xl">{featured.title}</h3>
-        <p class="relative mt-5 max-w-lg text-sm leading-loose text-ivory-muted">{featured.description}</p>
+        <p class="relative mt-5 max-w-lg text-sm leading-loose text-slate-200">{featured.description}</p>
         <div class="relative my-8 flex flex-wrap items-end gap-x-5 gap-y-3 sm:my-9">
           <span class="font-display text-8xl leading-none tracking-[-0.06em] text-champagne-light sm:text-9xl">{featured.number}</span>
           <p class="max-w-[10rem] pb-1 text-xs leading-relaxed text-champagne-light">{section.featuredMetricLabel}</p>
         </div>
         <ol aria-label={section.featuredStepsLabel} class="relative mt-auto grid gap-4 border-t border-champagne/15 pt-6 sm:grid-cols-3">
-          {section.featuredSteps.map((step) => <li class="flex items-baseline gap-3 sm:block"><span class="text-xs tracking-widest text-champagne">{step.number}</span><span class="text-[11px] leading-relaxed text-ivory-muted sm:mt-2 sm:block">{step.label}</span></li>)}
+          {section.featuredSteps.map((step) => <li class="flex items-baseline gap-3 sm:block"><span class="text-xs tracking-widest text-champagne">{step.number}</span><span class="text-[11px] leading-relaxed text-slate-300 sm:mt-2 sm:block">{step.label}</span></li>)}
         </ol>
       </article>
       {compact.map((item) => (
@@ -43,7 +43,7 @@ const icons: Record<string, 'shield' | 'heart' | 'clock'> = {
           <span class="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-champagne/15 bg-champagne/5 text-champagne-light transition-colors group-hover:bg-champagne/10"><Icon name={icons[item.id] ?? 'shield'} class="h-5 w-5" /></span>
           <div class="relative min-w-0">
             <h3 id={`differential-${item.id}`} class="text-xl leading-snug text-ivory">{item.title}</h3>
-            <p class="mt-3 text-xs leading-loose text-ivory-muted sm:text-[13px]">{item.description}</p>
+            <p class="mt-3 text-xs leading-loose text-slate-200 sm:text-[13px]">{item.description}</p>
           </div>
         </article>
       ))}

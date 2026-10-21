@@ -8,6 +8,7 @@ import Depoimentos from '../components/Depoimentos.astro';
 import LocalizacaoFaq from '../components/LocalizacaoFaq.astro';
 import Footer from '../components/Footer.astro';
 import FloatingWhatsapp from '../components/FloatingWhatsapp.astro';
+import SectionDivider from '../components/SectionDivider.astro';
 ---
 
 <Layout>
@@ -15,11 +16,16 @@ import FloatingWhatsapp from '../components/FloatingWhatsapp.astro';
     <Header />
     <main id="conteudo" tabindex="-1">
       <Hero />
+      <SectionDivider />
       <Diferenciais />
+      <SectionDivider />
       <Tratamentos />
+      <SectionDivider />
       <Depoimentos />
+      <SectionDivider />
       <LocalizacaoFaq />
     </main>
+    <SectionDivider />
     <Footer />
   </div>
   <FloatingWhatsapp />

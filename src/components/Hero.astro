@@ -11,25 +11,25 @@ const hasAccent = hero.headline.endsWith(hero.headlineAccent);
 const headlineLead = hasAccent ? hero.headline.slice(0, -hero.headlineAccent.length).trim() : hero.headline;
 ---
 
-<section id="inicio" aria-labelledby="hero-title" class="relative isolate overflow-hidden border-b border-white/10 bg-background pb-16 pt-32 sm:pb-24 sm:pt-40 xl:pt-48">
+<section id="inicio" aria-labelledby="hero-title" class="relative isolate overflow-hidden bg-background pb-16 pt-28 sm:pb-24 sm:pt-40 xl:pt-48">
   <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-premium-radial"></div>
   <div aria-hidden="true" class="pointer-events-none absolute right-0 top-40 -z-10 h-[36rem] w-1/2 rounded-full bg-surgical/5 blur-3xl"></div>
-  <div class="container grid min-w-0 items-center gap-14 lg:grid-cols-[1.08fr_1fr] lg:gap-10 xl:gap-16">
-    <div class="min-w-0">
-      <div class="mb-8 inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-champagne/20 bg-champagne/5 px-4 py-3 text-[10px] leading-relaxed tracking-wide text-ivory-muted backdrop-blur-md sm:text-[11px]">
+  <div class="container grid min-w-0 items-center gap-10 sm:gap-14 lg:grid-cols-[1.08fr_1fr] lg:gap-10 xl:gap-16">
+    <div class="flex min-w-0 flex-col">
+      <div class="order-6 mt-6 inline-flex sm:order-none sm:mb-8 sm:mt-0 max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-champagne/20 bg-champagne/5 px-4 py-3 text-[10px] leading-relaxed tracking-wide text-ivory-muted backdrop-blur-md sm:text-[11px]">
         <span class="inline-flex shrink-0 items-center gap-1.5 font-semibold text-champagne-light"><Icon name="star" class="h-3 w-3" />{clinic.google.rating} {hero.authority.ratingLabel}</span>
         <span aria-hidden="true" class="text-champagne/50">•</span>
         <span>{hero.authority.socialProof}</span>
       </div>
-      <p class="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-eyebrow text-surgical sm:text-xs">
+      <p class="hidden items-center gap-3 sm:mb-5 sm:flex text-[10px] font-semibold uppercase tracking-eyebrow text-surgical sm:text-xs">
         <span aria-hidden="true" class="h-px w-7 shrink-0 bg-surgical/60"></span>{hero.eyebrow}
       </p>
-      <h1 id="hero-title" class="max-w-3xl font-display text-[clamp(2.5rem,4.2vw,4.25rem)] leading-[1.08] tracking-display text-ivory">
+      <h1 id="hero-title" class="order-1 max-w-3xl font-display text-[clamp(1.875rem,8vw,2.5rem)] sm:order-none sm:text-[clamp(2.5rem,4.2vw,4.25rem)] leading-[1.08] tracking-display text-ivory">
         {headlineLead}{' '}
         {hasAccent && <span class="mt-2 block italic text-champagne-light">{hero.headlineAccent}</span>}
       </h1>
-      <p class="mt-7 max-w-xl text-[15px] leading-[1.9] text-ivory-muted sm:text-base">{hero.subtitle}</p>
-      <div class="mt-9 flex flex-col items-stretch gap-5 sm:items-start">
+      <p class="order-3 mt-5 max-w-xl text-sm leading-relaxed text-slate-300 sm:order-none sm:mt-7 sm:text-base sm:leading-[1.9]">{hero.subtitle}</p>
+      <div class="order-2 mt-5 flex flex-col items-stretch gap-3 sm:order-none sm:mt-9 sm:items-start sm:gap-5">
         <a href={whatsappUrl.href} class="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-champagne px-6 py-4 text-center text-[13px] font-semibold text-navy-950 shadow-glow transition-colors hover:bg-champagne-light sm:px-7">
           <Icon name="message" class="h-[18px] w-[18px]" />
           {hero.primaryCta.label}
@@ -39,12 +39,12 @@ const headlineLead = hasAccent ? hero.headline.slice(0, -hero.headlineAccent.len
           {hero.secondaryCta.label}<Icon name="down" class="h-4 w-4 text-champagne" />
         </a>
       </div>
-      <p class="mt-7 max-w-md text-[11px] leading-relaxed text-ivory-muted">{hero.reassurance}</p>
+      <p class="order-4 mt-5 max-w-md text-[11px] leading-relaxed text-slate-300 sm:order-none sm:mt-7">{hero.reassurance}</p>
     </div>
 
     <figure class="relative mx-auto w-full min-w-0 max-w-xl pb-16 lg:pb-14">
       <div aria-hidden="true" class="pointer-events-none absolute -inset-5 -z-10 rounded-full bg-champagne/10 blur-3xl"></div>
-      <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-champagne/15 bg-surface shadow-premium sm:aspect-[5/6] lg:aspect-[4/5] lg:rounded-[3rem]">
+      <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/20 bg-surface shadow-[0_28px_80px_-20px_rgba(0,0,0,0.65)] ring-1 ring-inset ring-champagne/10 sm:aspect-[5/6] lg:aspect-[4/5] lg:rounded-[3rem]">
         <img
           src={image.src}
           srcset={imageSources}
