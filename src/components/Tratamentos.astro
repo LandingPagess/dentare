@@ -29,7 +29,7 @@ const consultationUrl = (message: string) => {
 
     <div class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:mt-12 lg:gap-6">
       {procedures.map((procedure, index) => (
-        <article aria-labelledby={`procedure-${procedure.id}`} class="group relative flex min-w-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-surface/80 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:shadow-premium focus-within:border-gold/30 motion-reduce:transform-none motion-reduce:transition-none sm:p-8 lg:p-10">
+        <article aria-labelledby={`procedure-${procedure.id}`} class="group relative flex min-w-0 flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-surface/80 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:shadow-premium focus-within:border-gold/30 motion-reduce:transform-none motion-reduce:transition-none sm:p-8 lg:p-10">
           <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-br from-champagne/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100 motion-reduce:transition-none"></div>
           <div class="relative flex items-center justify-between gap-4">
             <span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-champagne/20 bg-champagne/5 text-champagne-light transition-colors duration-300 group-hover:bg-champagne/10 motion-reduce:transition-none">
@@ -37,8 +37,8 @@ const consultationUrl = (message: string) => {
             </span>
             <span aria-hidden="true" class="font-display text-4xl italic text-champagne/20 transition-colors duration-300 group-hover:text-champagne/40 motion-reduce:transition-none">{String(index + 1).padStart(2, '0')}</span>
           </div>
-          <p class="relative mt-7 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.12em] text-surgical sm:text-[11px]">
-            <span aria-hidden="true" class="h-1 w-1 shrink-0 rounded-full bg-surgical"></span>{procedure.highlight}
+          <p class="relative mt-7 inline-flex max-w-full items-center gap-2 self-start rounded-full border border-surgical/20 bg-surgical/5 px-3 py-1.5 text-[9px] font-medium uppercase tracking-[0.12em] text-surgical sm:text-[10px]">
+            <span aria-hidden="true" class="h-1 w-1 shrink-0 rounded-full bg-surgical"></span>{procedure.category}
           </p>
           <h3 id={`procedure-${procedure.id}`} class="relative mt-3 max-w-lg text-2xl leading-snug text-ivory sm:text-[1.75rem]">{procedure.title}</h3>
           <p class="relative mt-4 text-sm leading-loose text-ivory-muted">{procedure.summary}</p>
@@ -50,10 +50,10 @@ const consultationUrl = (message: string) => {
               </li>
             ))}
           </ul>
-          <div class="relative mt-auto border-t border-white/10 pt-6">
-            <a href={consultationUrl(procedure.whatsappMessage)} class="inline-flex min-h-14 w-full items-center justify-between gap-3 rounded-2xl border border-champagne/30 bg-champagne/5 px-4 py-4 text-left text-xs font-semibold leading-relaxed text-champagne-light transition-colors duration-300 hover:border-champagne hover:bg-champagne hover:text-navy-950 focus-visible:border-champagne focus-visible:bg-champagne focus-visible:text-navy-950 motion-reduce:transition-none sm:px-5 sm:text-[13px]">
+          <div class="relative mt-auto border-t border-white/10 pt-5">
+            <a href={consultationUrl(procedure.whatsappMessage)} aria-label={`${section.quickActionAccessibleLabel} ${procedure.title}`} class="group/action inline-flex min-h-12 max-w-full items-center gap-3 text-left text-xs font-semibold leading-relaxed text-champagne-light transition-colors hover:text-ivory focus-visible:text-ivory sm:text-[13px]">
               <span class="min-w-0">{procedure.ctaLabel}</span>
-              <Icon name="arrow" class="h-4 w-4" />
+              <Icon name="arrow" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-focus-within:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none" />
             </a>
           </div>
         </article>

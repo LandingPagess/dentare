@@ -121,53 +121,98 @@
       "socialProof": "Mais de 350 pacientes transformados em Vilas do Atlântico"
     },
     "visual": {
-      "eyebrow": "Precisão que acolhe",
-      "title": "Seu novo sorriso começa com um bom plano.",
-      "status": "Planejamento digital",
-      "watermark": "3D",
-      "caption": "Ilustração conceitual de planejamento dental",
-      "sealTitle": "Tecnologia 3D &",
-      "sealSubtitle": "Planejamento Guiado",
+      "eyebrow": "O cuidado começa no encontro",
+      "title": "Confiança para sorrir. Tranquilidade para viver.",
+      "caption": "Imagem ilustrativa",
+      "sealTitle": "Reabilitação Oral & Ortodontia Digital",
+      "sealSubtitle": "Precisão, naturalidade e acolhimento",
       "footerLabel": "Ciência, estética e cuidado",
-      "footerDetail": "Em cada detalhe do seu sorriso"
+      "footerDetail": "Em cada detalhe do seu sorriso",
+      "image": {
+        "src": "/images/dentare-human-hero-1440.webp",
+        "sources": [
+          {
+            "src": "/images/dentare-human-hero-640.webp",
+            "width": 640
+          },
+          {
+            "src": "/images/dentare-human-hero-1024.webp",
+            "width": 1024
+          },
+          {
+            "src": "/images/dentare-human-hero-1440.webp",
+            "width": 1440
+          }
+        ],
+        "width": 1440,
+        "height": 1800,
+        "alt": "Dentista e paciente sorrindo durante uma conversa em um consultório moderno e iluminado.",
+        "position": "50% 42%",
+        "credit": "Harold Hisona / Unsplash",
+        "sourceUrl": "https://unsplash.com/photos/dentist-talking-to-patient-in-a-modern-dental-office-Bg81yWKZlMg",
+        "licenseUrl": "https://unsplash.com/license"
+      }
     }
   },
   "differentialsSection": {
-    "eyebrow": "Excelência em cada detalhe",
-    "title": "Tecnologia que planeja. Pessoas que acolhem.",
-    "description": "Precisão para planejar, tempo para ouvir e atenção ao seu conforto. Um cuidado pensado para você se sentir seguro em cada etapa."
+    "eyebrow": "Precisão que faz a diferença",
+    "title": "Alta tecnologia. Um cuidado profundamente humano.",
+    "description": "Um bom resultado começa antes do procedimento. Unimos planejamento criterioso, escuta e atenção aos detalhes para orientar cada decisão com você.",
+    "featuredEyebrow": "Inteligência no planejamento",
+    "featuredMetricLabel": "Sua anatomia, vista em profundidade.",
+    "featuredStepsLabel": "Do diagnóstico ao cuidado",
+    "featuredSteps": [
+      {
+        "number": "01",
+        "label": "Diagnóstico detalhado"
+      },
+      {
+        "number": "02",
+        "label": "Planejamento individual"
+      },
+      {
+        "number": "03",
+        "label": "Cuidado acompanhado"
+      }
+    ]
   },
   "differentials": [
     {
       "id": "tecnologia-3d",
-      "title": "Tecnologia 3D",
-      "description": "Planejamento tridimensional para estudar sua anatomia e orientar cada etapa com mais clareza e precisão.",
-      "highlight": "Precisão antes de começar."
+      "title": "Tecnologia Guiada 3D",
+      "description": "O planejamento tridimensional permite estudar a anatomia e relacionar a posição dos implantes à futura prótese. Antes de começar, avaliamos as possibilidades do seu caso para orientar um tratamento individual, com foco em função, precisão e naturalidade.",
+      "highlight": "Precisão antes de começar.",
+      "number": "3D"
     },
     {
       "id": "conforto",
       "title": "Procedimentos Confortáveis",
       "description": "Controle individualizado da dor e técnicas escolhidas com atenção ao seu conforto, do atendimento à recuperação.",
-      "highlight": "Tranquilidade em cada etapa."
+      "highlight": "Tranquilidade em cada etapa.",
+      "number": "01"
     },
     {
       "id": "atendimento-humanizado",
       "title": "Atendimento Humanizado",
       "description": "Escuta atenta, explicações claras e decisões compartilhadas. Seus receios e suas expectativas têm espaço aqui.",
-      "highlight": "Você no centro do cuidado."
+      "highlight": "Você no centro do cuidado.",
+      "number": "02"
     },
     {
       "id": "pontualidade",
       "title": "Pontualidade",
       "description": "Agenda organizada e comunicação próxima para respeitar o seu tempo, sem abrir mão de um atendimento cuidadoso.",
-      "highlight": "Seu tempo também importa."
+      "highlight": "Seu tempo também importa.",
+      "number": "03"
     }
   ],
   "proceduresSection": {
     "eyebrow": "Tratamentos Exclusivos",
     "title": "Especialidades de Alta Precisão",
     "description": "Tecnologia e experiência clínica a serviço de um sorriso que une saúde, função e naturalidade. Conheça as possibilidades e encontre, em uma avaliação, o caminho indicado para você.",
-    "note": "Cada tratamento é indicado após avaliação clínica. Técnicas, etapas e resultados variam conforme as necessidades de cada paciente."
+    "note": "Cada tratamento é indicado após avaliação clínica. Técnicas, etapas e resultados variam conforme as necessidades de cada paciente.",
+    "quickActionLabel": "Consultar procedimento via WhatsApp",
+    "quickActionAccessibleLabel": "Consultar via WhatsApp sobre"
   },
   "procedures": [
     {
@@ -180,9 +225,10 @@
         "Guia cirúrgico personalizado",
         "Acessos conservadores, quando indicados"
       ],
-      "ctaLabel": "Consultar sobre Implantes Dentários Guiados",
+      "ctaLabel": "Consultar procedimento via WhatsApp",
       "whatsappMessage": "Olá, equipe DENTARE! Tenho interesse em implantes dentários guiados. Gostaria de agendar uma avaliação para entender a indicação, as etapas e a recuperação no meu caso.",
-      "highlight": "Planejamento computadorizado"
+      "highlight": "Planejamento computadorizado",
+      "category": "Precisão Cirúrgica"
     },
     {
       "id": "alinhadores-invisiveis",
@@ -194,9 +240,10 @@
         "Planejamento individual dos movimentos",
         "Praticidade nas refeições e na higiene"
       ],
-      "ctaLabel": "Consultar sobre Ortodontia Digital & Alinhadores Invisíveis",
+      "ctaLabel": "Consultar procedimento via WhatsApp",
       "whatsappMessage": "Olá, equipe DENTARE! Quero saber se os alinhadores invisíveis são indicados para mim. Podemos agendar uma avaliação ortodôntica e conversar sobre o planejamento?",
-      "highlight": "Discrição no dia a dia"
+      "highlight": "Discrição no dia a dia",
+      "category": "Invisível & Confortável"
     },
     {
       "id": "reabilitacao-oral",
@@ -208,9 +255,10 @@
         "Próteses fixas conforme indicação",
         "Reconstrução da função e da estética"
       ],
-      "ctaLabel": "Consultar sobre Reabilitação Oral & Próteses Fixas",
+      "ctaLabel": "Consultar procedimento via WhatsApp",
       "whatsappMessage": "Olá, equipe DENTARE! Gostaria de conversar sobre reabilitação oral para melhorar minha mastigação e meu sorriso. Quero agendar uma avaliação e conhecer as possibilidades para o meu caso.",
-      "highlight": "Função e estética em equilíbrio"
+      "highlight": "Função e estética em equilíbrio",
+      "category": "Função & Naturalidade"
     },
     {
       "id": "estetica-do-sorriso",
@@ -222,9 +270,10 @@
         "Facetas e lentes conforme indicação",
         "Foco em harmonia e preservação dental"
       ],
-      "ctaLabel": "Consultar sobre Estética Dental Avançada & Facetas/Lentes",
+      "ctaLabel": "Consultar procedimento via WhatsApp",
       "whatsappMessage": "Olá, equipe DENTARE! Tenho interesse em estética dental avançada, facetas ou lentes de contato dentais. Gostaria de agendar uma avaliação para conhecer as opções indicadas para o meu sorriso.",
-      "highlight": "Naturalidade em cada detalhe"
+      "highlight": "Naturalidade em cada detalhe",
+      "category": "Estética & Harmonia"
     }
   ],
   "testimonialsSection": {
@@ -233,7 +282,7 @@
     "description": "Experiências compartilhadas por pacientes da DENTARE.",
     "source": "Depoimentos públicos transcritos e fornecidos pela clínica",
     "ratingPrefix": "Nota",
-    "verificationBadge": "Avaliação verificada no Google",
+    "verificationBadge": "Avaliação verificada no Google Maps",
     "ratingAccessibleLabel": "estrelas de 5"
   },
   "testimonials": [
@@ -243,7 +292,8 @@
       "rating": 5,
       "highlight": "Equipe educada, acolhedora e extremamente comprometida.",
       "quote": "Recomendo a clínica com todo prazer. Equipe educada, acolhedora e extremamente comprometida. Desde a recepção até o procedimento, tudo foi feito com cuidado e atenção. O Dr. Paulo me deixou muito tranquila e explicou cada etapa do pós-operatório.",
-      "featured": true
+      "featured": true,
+      "initials": "AF"
     },
     {
       "id": "maria-rita-silva",
@@ -251,7 +301,8 @@
       "rating": 5,
       "highlight": "Melhor experiência possível!",
       "quote": "Melhor experiência possível! Dr. Paulo Victor muito atencioso e competente, e a recepção é acolhedora demais. A clínica Dentare com certeza foi minha melhor escolha em Vilas do Atlântico.",
-      "featured": true
+      "featured": true,
+      "initials": "MR"
     },
     {
       "id": "rayane-rode",
@@ -259,7 +310,8 @@
       "rating": 5,
       "highlight": "Hoje estou confiante para falar, sorrir e mastigar.",
       "quote": "Cheguei tímida e com a autoestima abalada, mas fui acolhida por toda a equipe. Hoje estou confiante para falar, sorrir e mastigar. Muito carinho e profissionalismo com o paciente.",
-      "featured": true
+      "featured": true,
+      "initials": "RR"
     }
   ],
   "faqSection": {
@@ -324,7 +376,21 @@
     ],
     "mapTitle": "Localização da DENTARE no Edifício Ônix, em Vilas do Atlântico",
     "mapCaption": "Edifício Ônix · Sala 102 · Vilas do Atlântico",
-    "mapEmbedUrl": "https://www.google.com/maps?q=Av.%20Praia%20de%20Itapu%C3%A3%2C%20Quadra%2019%2C%20Lote%2007%20%E2%80%94%20Edif%C3%ADcio%20%C3%94nix%2C%20Sala%20102%2C%20Vilas%20do%20Atl%C3%A2ntico%2C%20Lauro%20de%20Freitas%20-%20BA&output=embed"
+    "mapEmbedUrl": "https://www.google.com/maps?q=Av.%20Praia%20de%20Itapu%C3%A3%2C%20Quadra%2019%2C%20Lote%2007%20%E2%80%94%20Edif%C3%ADcio%20%C3%94nix%2C%20Sala%20102%2C%20Vilas%20do%20Atl%C3%A2ntico%2C%20Lauro%20de%20Freitas%20-%20BA&output=embed",
+    "amenities": [
+      {
+        "id": "parking",
+        "label": "Estacionamento no Local"
+      },
+      {
+        "id": "climate",
+        "label": "Sala Climatizada"
+      },
+      {
+        "id": "accessibility",
+        "label": "Acessibilidade"
+      }
+    ]
   },
   "footer": {
     "description": "Odontologia que une precisão, naturalidade e acolhimento em Vilas do Atlântico.",

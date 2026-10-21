@@ -3,6 +3,8 @@ import dentare from '../data/dentare.json';
 import Icon from './Icon.astro';
 
 const { clinic, hero } = dentare;
+const image = hero.visual.image;
+const imageSources = image.sources.map((source) => `${source.src} ${source.width}w`).join(', ');
 const whatsappUrl = new URL(clinic.contact.whatsappBaseUrl);
 whatsappUrl.searchParams.set('text', hero.primaryCta.whatsappMessage);
 const hasAccent = hero.headline.endsWith(hero.headlineAccent);
@@ -12,7 +14,7 @@ const headlineLead = hasAccent ? hero.headline.slice(0, -hero.headlineAccent.len
 <section id="inicio" aria-labelledby="hero-title" class="relative isolate overflow-hidden border-b border-white/10 bg-background pb-16 pt-32 sm:pb-24 sm:pt-40 xl:pt-48">
   <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-premium-radial"></div>
   <div aria-hidden="true" class="pointer-events-none absolute right-0 top-40 -z-10 h-[36rem] w-1/2 rounded-full bg-surgical/5 blur-3xl"></div>
-  <div class="container grid min-w-0 items-center gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-10 xl:gap-16">
+  <div class="container grid min-w-0 items-center gap-14 lg:grid-cols-[1.08fr_1fr] lg:gap-10 xl:gap-16">
     <div class="min-w-0">
       <div class="mb-8 inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-champagne/20 bg-champagne/5 px-4 py-3 text-[10px] leading-relaxed tracking-wide text-ivory-muted backdrop-blur-md sm:text-[11px]">
         <span class="inline-flex shrink-0 items-center gap-1.5 font-semibold text-champagne-light"><Icon name="star" class="h-3 w-3" />{clinic.google.rating} {hero.authority.ratingLabel}</span>
@@ -22,7 +24,7 @@ const headlineLead = hasAccent ? hero.headline.slice(0, -hero.headlineAccent.len
       <p class="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-eyebrow text-surgical sm:text-xs">
         <span aria-hidden="true" class="h-px w-7 shrink-0 bg-surgical/60"></span>{hero.eyebrow}
       </p>
-      <h1 id="hero-title" class="max-w-3xl font-display text-[clamp(2.5rem,4.6vw,4.5rem)] leading-[1.08] tracking-display text-ivory">
+      <h1 id="hero-title" class="max-w-3xl font-display text-[clamp(2.5rem,4.2vw,4.25rem)] leading-[1.08] tracking-display text-ivory">
         {headlineLead}{' '}
         {hasAccent && <span class="mt-2 block italic text-champagne-light">{hero.headlineAccent}</span>}
       </h1>
@@ -40,57 +42,33 @@ const headlineLead = hasAccent ? hero.headline.slice(0, -hero.headlineAccent.len
       <p class="mt-7 max-w-md text-[11px] leading-relaxed text-ivory-muted">{hero.reassurance}</p>
     </div>
 
-    <figure class="relative mx-auto w-full min-w-0 max-w-lg pb-9 lg:pb-8">
-      <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-surface-raised via-surface to-background p-6 shadow-premium sm:p-8">
-        <div class="relative z-10 flex items-start justify-between gap-4">
-          <div>
-            <p class="text-[9px] font-medium uppercase tracking-eyebrow text-champagne">{hero.visual.eyebrow}</p>
-            <p class="mt-3 max-w-[16rem] font-display text-2xl leading-snug text-ivory sm:text-[1.8rem]">{hero.visual.title}</p>
-          </div>
-          <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-champagne"><Icon name="sparkle" class="h-[18px] w-[18px]" /></span>
-        </div>
-        <div class="relative -mx-4 -mb-4 mt-3 sm:-mx-6">
-          <span aria-hidden="true" class="absolute right-6 top-2 font-sans text-7xl font-semibold tracking-tighter text-white/[0.035] sm:text-8xl">{hero.visual.watermark}</span>
-          <svg viewBox="0 0 400 430" class="relative block h-auto w-full" fill="none" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="dentare-tooth" x1="110" y1="93" x2="290" y2="340" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#FAF7F0" /><stop offset=".35" stop-color="#E8DECD" /><stop offset=".65" stop-color="#B9AE9B" /><stop offset="1" stop-color="#716D65" />
-              </linearGradient>
-              <linearGradient id="dentare-edge" x1="116" y1="115" x2="270" y2="293" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" stop-opacity=".85" /><stop offset="1" stop-color="white" stop-opacity="0" />
-              </linearGradient>
-              <radialGradient id="dentare-halo"><stop stop-color="#8FBDB7" stop-opacity=".12" /><stop offset="1" stop-color="#8FBDB7" stop-opacity="0" /></radialGradient>
-              <pattern id="dentare-grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0v28" stroke="#8FBDB7" stroke-opacity=".06" stroke-width=".7" /></pattern>
-              <filter id="dentare-shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12" /></filter>
-            </defs>
-            <rect x="16" y="10" width="368" height="400" fill="url(#dentare-grid)" />
-            <ellipse cx="200" cy="216" rx="178" ry="185" fill="url(#dentare-halo)" />
-            <ellipse cx="200" cy="370" rx="76" ry="12" fill="#000" opacity=".4" filter="url(#dentare-shadow)" />
-            <ellipse cx="200" cy="227" rx="164" ry="63" stroke="#8FBDB7" stroke-opacity=".17" transform="rotate(-24 200 227)" />
-            <ellipse cx="200" cy="227" rx="167" ry="66" stroke="#C5A880" stroke-opacity=".15" transform="rotate(24 200 227)" />
-            <path d="M175 105C140 65 102 78 85 118C65 165 88 207 110 244C125 273 129 326 153 351C163 362 179 346 180 322L190 268C195 251 205 251 210 268L220 322C223 346 237 362 247 351C271 325 275 273 290 244C316 206 333 164 314 118C297 78 260 65 225 105C211 114 189 114 175 105Z" fill="url(#dentare-tooth)" />
-            <path d="M175 105C140 65 102 78 85 118C65 165 88 207 110 244C125 273 129 326 153 351C163 362 179 346 180 322L190 268C195 251 205 251 210 268L220 322C223 346 237 362 247 351C271 325 275 273 290 244C316 206 333 164 314 118C297 78 260 65 225 105C211 114 189 114 175 105Z" stroke="url(#dentare-edge)" stroke-width="1.4" />
-            <path d="M110 119C98 146 109 178 124 202C137 224 143 249 149 275" stroke="white" stroke-opacity=".3" stroke-width="8" stroke-linecap="round" />
-            <path d="M167 124C185 139 215 139 235 122M200 137l-2 64" stroke="#7B7368" stroke-opacity=".35" stroke-width="2" stroke-linecap="round" />
-            <path d="M88 174C142 159 251 160 313 177M94 190C155 175 252 179 307 193M104 207C159 194 246 197 299 210M113 223C162 213 243 214 289 225" stroke="#8FBDB7" stroke-opacity=".45" stroke-width=".8" />
-            <path d="M41 173h39M320 173h39M200 43v29M200 378v24" stroke="#8FBDB7" stroke-opacity=".4" />
-            <path d="M43 113V91h22M335 91h22v22M43 297v22h22M335 319h22v-22" stroke="#C5A880" stroke-opacity=".55" stroke-width="1.2" />
-            <circle cx="103" cy="190" r="4" fill="#8FBDB7" /><circle cx="103" cy="190" r="9" stroke="#8FBDB7" stroke-opacity=".4" />
-            <path d="M94 190H58v52H31" stroke="#8FBDB7" stroke-opacity=".5" stroke-width=".8" />
-            <circle cx="288" cy="223" r="4" fill="#C5A880" /><circle cx="288" cy="223" r="9" stroke="#C5A880" stroke-opacity=".4" />
-            <path d="M297 223h39v-71h37" stroke="#C5A880" stroke-opacity=".5" stroke-width=".8" />
-          </svg>
-        </div>
-        <div class="flex items-center justify-between gap-3 border-t border-white/10 pt-4 text-[9px] uppercase tracking-[0.12em] text-ivory-muted sm:text-[10px]">
-          <span class="flex items-center gap-2"><span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-surgical"></span>{hero.visual.status}</span>
-          <span class="text-champagne">{clinic.shortName}</span>
-        </div>
-        <figcaption class="mt-3 text-[9px] text-ivory-muted">{hero.visual.caption}</figcaption>
+    <figure class="relative mx-auto w-full min-w-0 max-w-xl pb-16 lg:pb-14">
+      <div aria-hidden="true" class="pointer-events-none absolute -inset-5 -z-10 rounded-full bg-champagne/10 blur-3xl"></div>
+      <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-champagne/15 bg-surface shadow-premium sm:aspect-[5/6] lg:aspect-[4/5] lg:rounded-[3rem]">
+        <img
+          src={image.src}
+          srcset={imageSources}
+          sizes="(min-width: 1440px) 560px, (min-width: 1024px) 45vw, (min-width: 640px) 576px, calc(100vw - 3rem)"
+          width={image.width}
+          height={image.height}
+          alt={image.alt}
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          style={{ objectPosition: image.position }}
+          class="absolute inset-0 h-full w-full object-cover saturate-[0.8]"
+        />
+        <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/5 to-navy-950/15"></div>
+        <p class="absolute left-5 top-5 hidden max-w-[calc(100%-2.5rem)] items-center gap-2 rounded-full border border-white/20 bg-navy-950/30 px-3 py-2 text-[9px] uppercase tracking-[0.13em] text-ivory backdrop-blur-xl sm:left-7 sm:top-7 sm:flex sm:text-[10px]">
+          <Icon name="sparkle" class="h-3.5 w-3.5 text-champagne-light" />{hero.visual.eyebrow}
+        </p>
+        <p class="absolute bottom-28 left-8 right-8 hidden max-w-sm font-display text-4xl italic leading-tight text-ivory sm:block">{hero.visual.title}</p>
       </div>
-      <div class="absolute bottom-0 right-3 flex max-w-[calc(100%-1.5rem)] items-center gap-3 rounded-2xl border border-champagne/25 bg-navy-800/85 px-5 py-4 shadow-premium backdrop-blur-md sm:right-5 sm:gap-4 sm:px-6">
-        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-champagne/20 bg-champagne/10 text-champagne"><Icon name="scan" class="h-6 w-6" /></span>
-        <span class="text-xs leading-relaxed sm:text-sm"><span class="block text-champagne-light">{hero.visual.sealTitle}</span><span class="font-semibold text-ivory">{hero.visual.sealSubtitle}</span></span>
+      <div class="absolute bottom-10 left-3 right-3 flex items-center gap-3 rounded-2xl border border-amber-300/20 bg-slate-900/70 px-4 py-5 shadow-2xl backdrop-blur-xl sm:left-6 sm:right-6 sm:gap-4 sm:px-6 lg:-left-6 lg:right-6">
+        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-champagne/30 bg-champagne/10 text-champagne-light sm:h-12 sm:w-12"><Icon name="award" class="h-7 w-7" /></span>
+        <span class="min-w-0"><span class="block font-display text-base leading-snug text-champagne-light sm:text-xl">{hero.visual.sealTitle}</span><span class="mt-1 block text-[10px] leading-relaxed text-ivory-muted sm:text-[11px]">{hero.visual.sealSubtitle}</span></span>
       </div>
+      <figcaption class="absolute bottom-0 left-0 max-w-full text-left text-[9px] leading-relaxed text-ivory-muted">{hero.visual.caption} · <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" class="underline decoration-white/15 underline-offset-2 hover:text-champagne-light">{image.credit}</a></figcaption>
     </figure>
   </div>
   <div class="container mt-14 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-t border-white/10 pt-6 text-[10px] font-medium uppercase tracking-[0.14em] text-ivory-muted sm:mt-20 sm:text-[11px]">
